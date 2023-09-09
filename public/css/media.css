@@ -1,0 +1,103 @@
+@media (max-width: 768px) {
+    body{
+        background: white;
+    }
+    .carousel-inner{
+        height: 100%;
+    }
+    .carousel-container{
+        width: 100% !important;
+        /* background-color: red; */
+    }
+
+    #carouselExampleCaptions {
+        height: 250px;
+        margin: 5px 0;
+        /* width: 100%; */
+    }
+    .carousel-caption h5{
+        font-size: 15px;
+    }
+    main{
+        width: 100%;
+        /* background-color: blueviolet; */
+    }
+    .container-main{
+        width: 100%;
+        margin:0 auto;
+    }
+    .main .card:nth-child(1){
+        font-size: 12px;
+    }
+    .main .card img{
+        height: 100%;
+        object-fit: cover;
+    }
+    .main .card:nth-child(2), .card:nth-child(3){
+        width: 48%;
+        margin: 0 auto;
+        font-size: 11px;
+    }
+    .side-main{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* background-color: aqua; */
+    }
+    .side-main .cards:nth-child(1) img{
+        height: 350px;
+        
+        object-fit: cover;
+    }
+    .side-main .card-main{
+        /* background-color: red; */
+        width: 100% !important;
+        height: 500px;
+        /* background-color: red; */
+        /* margin: 0 auto; */
+        margin:5px 0;
+    }
+    .side-main .content{
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        /* background-color: red; */
+        width: 100% !important;
+        flex-wrap: wrap;
+        margin: 0 !important;
+        justify-content: center;
+    }
+
+    .content .cards .row{
+            /* background-color: aqua; */
+            width: 1000px;
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-end;
+            /* flex-wrap: nowrap; */
+    }
+    .content .cards img{
+        width: 100px !important;
+    }
+    .content .cards .row .col-md-4 img{
+        width: 100px !important;
+    }
+
+    .content .cards {
+        flex-wrap: wrap;
+        margin: 20px 0;
+        max-width: 1000px !important;
+        /* height: 250px; */
+    }
+    .content .cards .card-body{
+        width: 700px;
+        /* float: left; */
+    }
+    .content .cards .card-body p{
+        width: 250px;
+        font-size: 13px;
+        font-weight: bold;
+    }
+}
+
