@@ -10,7 +10,7 @@
                 <div class="boxes">
                     <div class="box box1">
                         <i class="uil uil-thumbs-up"></i>
-                        <span class="text">Total Likes</span>
+                        <span class="text">Total Post</span>
                         <span class="number">50,120</span>
                     </div>
                     <div class="box box2">

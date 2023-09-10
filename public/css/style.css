@@ -4,12 +4,13 @@ body{
     box-sizing: border-box;
     /* overflow: hidden; */
     font-family: 'Poppins', sans-serif;
-    /* background: white; */
+    
     /* background: rgb(100, 100, 224); */
-    background: url(img/borobudur1.webp);
+    background: url(/img/borobudur1.webp);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    /* background-color: blue; */
 }
 main{
     width: 100%;
@@ -97,6 +98,7 @@ header{
     text-decoration: none;
     font-size:10px;
     border-radius: 0;
+    /* z-index: 9999; */
     transition: all 0.3s ease;
 }
 .cards{
