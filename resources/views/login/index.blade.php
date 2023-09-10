@@ -7,17 +7,32 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Login & Registration Form | CoderGirl</title>
   <!---Custom CSS File--->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
   <link rel="stylesheet" href="css/login-style.css">
 </head>
 <body>
+  <div class="container-fluid col-4 mt-2">
+    @if (session()->has('success'))
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      {{ session('success') }}
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    @endif
+    @if (session()->has('loginError'))
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      {{ session('loginError') }}
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    @endif
+  </div>
   <div class="container">
-    <input type="checkbox" id="check">
     <div class="login form">
       <header>Admin Login</header>
-      <form action="#">
-        <input type="text" placeholder="Enter your username">
-        <input type="password" placeholder="Enter your password">
-        <input type="button" class="button" value="Login">
+      <form action="login" method="POST">
+        @csrf
+        <input type="text" name="username" placeholder="Enter your username">
+        <input type="password" name="password" placeholder="Enter your password">
+        <input type="submit" class="button" value="Login">
       </form>
     </div>
   </div>

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\LoginController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,11 +15,12 @@ use App\Http\Controllers\PostController;
 */
 
 
-Route::get('/admin', function () {
-    return view('login/index');
-});
+
 Route::get('/dashboard', function () {
     return view('dashboard/index');
-});
+})->middleware('auth');
 // Route::get('/bug', [PostController::class, 'index']);
 Route::get('/', [PostController::class, 'index']);
+Route::get('/admin', [LoginController::class, 'index'])->name('login')->middleware('guest');
+Route::post('/login', [LoginController::class, 'authenticate']);
+Route::get('/logout', [LoginController::class, 'logout']);

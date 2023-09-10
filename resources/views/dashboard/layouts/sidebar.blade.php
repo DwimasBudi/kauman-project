@@ -14,13 +14,13 @@
                     <i class="uil uil-estate"></i>
                     <span class="link-name">Dahsboard</span>
                 </a></li>
-                <li><a href="#">
+                <li><a href="dashboard/posts/">
                     <i class="uil uil-files-landscapes"></i>
                     <span class="link-name">Content</span>
                 </a></li>
-                <li><a href="#">
+                <li><a href="/">
                     <i class="uil uil-chart"></i>
-                    <span class="link-name">Analytics</span>
+                    <span class="link-name">Website</span>
                 </a></li>
                 <li><a href="#">
                     <i class="uil uil-thumbs-up"></i>
@@ -35,13 +35,13 @@
                     <span class="link-name">Share</span>
                 </a></li>
             </ul>
-            
             <ul class="logout-mode">
-                <li><a href="#">
-                    <i class="uil uil-signout"></i>
-                    <span class="link-name">Logout</span>
-                </a></li>
-
+                <li>
+                    <a href="/logout">
+                        <i class="uil uil-signout"></i>
+                        <span class="link-name">Logout</span>
+                    </a>
+                </li>
                 <li class="mode">
                     <a href="#">
                         <i class="uil uil-moon"></i>
