@@ -11,7 +11,7 @@
 @endif
     <div class="table-responsive col-lg-12">
       <a href="/dashboard/posts/create" class="btn btn-primary mb-3">Create new post</a>
-        <table class="table table-striped table-sm">
+        <table id="tabel-data" class="table table-striped table-bordered" width="100%" cellspacing="0">
           <thead>
             <tr>
               <th scope="col">#</th>
@@ -49,7 +49,7 @@
           </tbody>
         </table>
       </div>
-      <div class="d-flex justify-content-center mb-3">
+      {{-- <div class="mb-3 col-md-12">
         {{ $posts->links() }}
-      </div>
+      </div> --}}
 @endsection

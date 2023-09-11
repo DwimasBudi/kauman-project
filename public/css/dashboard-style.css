@@ -76,7 +76,7 @@ body.dark .activity-data::-webkit-scrollbar-thumb:hover{
     transition: var(--tran-05);
 }
 nav.close{
-    width: 73px;
+    width: 73px !important;
 }
 nav .logo-name{
     display: flex;
@@ -213,8 +213,8 @@ body.dark .switch:before{
     transition: var(--tran-05);
 }
 nav.close ~ .dashboard{
-    left: 73px;
-    width: calc(100% - 73px);
+    left: 73px !important;
+    width: calc(100% - 73px) !important;
 }
 .dashboard .top{
     position: fixed;
@@ -230,8 +230,8 @@ nav.close ~ .dashboard{
     z-index: 10;
 }
 nav.close ~ .dashboard .top{
-    left: 73px;
-    width: calc(100% - 73px);
+    left: 73px !important;
+    width: calc(100% - 73px) !important;
 }
 .dashboard .top .sidebar-toggle{
     font-size: 26px;

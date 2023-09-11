@@ -2,14 +2,14 @@
 <nav id="navbar">
         <div class="logo-name">
             <div class="logo-image">
-                {{-- <img src="images/logo.png" alt=""> --}}
+                <img src="images/logo.png" alt="">
             </div>
 
             <span class="logo_name">Kauman</span>
         </div>
 
         <div class="menu-items">
-            <ul class="nav-links">
+            <ul class="nav-links" style="padding-left:0;">
                 <li><a href="/dashboard/">
                     <i class="uil uil-estate"></i>
                     <span class="link-name">Dahsboard</span>
@@ -35,7 +35,7 @@
                     <span class="link-name">Share</span>
                 </a></li>
             </ul>
-            <ul class="logout-mode">
+            <ul class="logout-mode" style="padding-left:0;">
                 <li>
                     <a href="/logout">
                         <i class="uil uil-signout"></i>

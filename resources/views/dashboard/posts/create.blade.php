@@ -55,13 +55,13 @@
    </div>
     
   <div class="mb-3">
-    <label for="body" class="form-label">Body</label>
+    <label for="description" class="form-label">Body</label>
     @error('body')
         <p class="text-danger">
             {{$message}}
         </p> 
     @enderror
-        <textarea name="description" id="description" cols="30" rows="10" required>
+        <textarea name="description" id="description" cols="30" rows="20" required>
 
         </textarea>
   </div>
@@ -84,7 +84,7 @@
     // TinyMCE
 tinymce.init({
   selector: 'textarea',
-    plugins: 'advlist autolink lists link image charmap print preview hr anchor pagebreak code searchreplace wordcount visualblocks visualchars fullscreen insertdatetime media nonbreaking save table directionality emoticons template paste textcolor colorpicker textpattern toc imagetools',
+    plugins: 'advlist autolink lists link image charmap preview anchor pagebreak code searchreplace wordcount visualblocks visualchars fullscreen insertdatetime media nonbreaking save table directionality emoticons template',
     toolbar: 'undo redo | formatselect | bold italic underline strikethrough | forecolor backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | link image media | code',
     promotion: false,
     branding: false,

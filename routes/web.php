@@ -22,7 +22,7 @@ Route::get('/dashboard', function () {
 })->middleware('auth');
 // Route::get('/bug', [PostController::class, 'index']);
 Route::get('/', [PostController::class, 'index']);
-Route::get('/admin/', [LoginController::class, 'index'])->name('login')->middleware('guest');
+Route::get('/admin', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/login/', [LoginController::class, 'authenticate']);
 Route::get('/logout/', [LoginController::class, 'logout']);
 Route::resource('/dashboard/posts/', DashboardController::class)->middleware('auth');
