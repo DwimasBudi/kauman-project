@@ -1,8 +1,8 @@
 
-<nav>
+<nav id="navbar">
         <div class="logo-name">
             <div class="logo-image">
-                <img src="images/logo.png" alt="">
+                {{-- <img src="images/logo.png" alt=""> --}}
             </div>
 
             <span class="logo_name">Kauman</span>
@@ -10,11 +10,11 @@
 
         <div class="menu-items">
             <ul class="nav-links">
-                <li><a href="#">
+                <li><a href="/dashboard/">
                     <i class="uil uil-estate"></i>
                     <span class="link-name">Dahsboard</span>
                 </a></li>
-                <li><a href="dashboard/posts/">
+                <li><a href="/dashboard/posts/">
                     <i class="uil uil-files-landscapes"></i>
                     <span class="link-name">Content</span>
                 </a></li>

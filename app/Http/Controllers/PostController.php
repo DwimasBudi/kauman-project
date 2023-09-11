@@ -29,4 +29,5 @@ class PostController extends Controller
             'posts' => Post::orderBy('created_at', 'desc')->get(),
         ]);
     }
+    
 }

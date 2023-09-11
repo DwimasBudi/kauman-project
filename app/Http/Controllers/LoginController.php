@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
-    protected $redirectTo = '/dashboard';
+    
     public function index()
     {
         return view('login.index', [
