@@ -2,11 +2,13 @@
 
 namespace App\Providers;
 
-use Illuminate\Cache\RateLimiting\Limit;
-use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\RateLimiter;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Cache\RateLimiting\Limit;
+use Illuminate\Support\Facades\RateLimiter;
+use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
+
 
 class RouteServiceProvider extends ServiceProvider
 {
@@ -36,7 +38,7 @@ class RouteServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->configureRateLimiting();
-
+        
         $this->routes(function () {
             Route::prefix('api')
                 ->middleware('api')
@@ -58,6 +60,15 @@ class RouteServiceProvider extends ServiceProvider
     {
         RateLimiter::for('api', function (Request $request) {
             return Limit::perMinute(60)->by(optional($request->user())->id ?: $request->ip());
+        });
+        RateLimiter::for('login', function (Request $request) {
+            // return Limit::perMinute(3);
+            return Limit::perMinute(2)->by($request->input('username'));
+        });
+        RateLimiter::for('loginx', function (Request $request) {
+            return Limit::perMinute(3)->by($request->ip())->response(function () {
+                return back()->with('loginLimit', 'Terlau Banyak percobaan!, Tunggu 1 Menit !');
+            });
         });
     }
 }

@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DashboardController;
+use Illuminate\Http\Request;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,13 +19,20 @@ use App\Http\Controllers\DashboardController;
 
 
 
+Route::get('/ip', function (Request $request) {
+    return $request->ip();
+});
+Route::get('/testing', function () {
+    return "dwimas budi";
+});
+
 Route::get('/dashboard', function () {
     return view('dashboard.index');
 })->middleware('auth');
 // Route::get('/bug', [PostController::class, 'index']);
 Route::get('/', [PostController::class, 'index']);
 Route::get('/admin', [LoginController::class, 'index'])->name('login')->middleware('guest');
-Route::post('/login/', [LoginController::class, 'authenticate']);
+Route::post('/login', [LoginController::class, 'authenticate'])->middleware('throttle:loginx');
 Route::get('/logout/', [LoginController::class, 'logout']);
 Route::resource('/dashboard/posts/', DashboardController::class)->middleware('auth');
 Route::get('/dashboard/posts/checkSlug/', [DashboardController::class, 'checkSlug']);

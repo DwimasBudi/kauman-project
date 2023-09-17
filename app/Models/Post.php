@@ -42,12 +42,6 @@ class Post extends Model
             });
         }
 
-        if (isset($filters['author'])) {
-            $author = $filters['author'];
-            $query->whereHas('user', function ($query) use ($author) {
-                $query->where('username', $author);
-            });
-        }
 
         return $query;
     }

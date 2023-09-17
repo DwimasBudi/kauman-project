@@ -18,9 +18,10 @@
       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
     @endif
-    @if (session()->has('loginError'))
+    @if (session()->has('loginError') || session()->has('loginLimit'))
     <div class="alert alert-danger alert-dismissible fade show" role="alert">
-      {{ session('loginError') }}
+      {{ session('loginError') }} 
+      {{ session('loginLimit') }} 
       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
     @endif
@@ -30,8 +31,12 @@
       <header>Admin Login</header>
       <form action="login" method="POST">
         @csrf
-        <input type="text" name="username" placeholder="Enter your username">
-        <input type="password" name="password" placeholder="Enter your password">
+        <input type="text" name="username" placeholder="Enter your username" @if (session()->has('loginLimit'))
+        disabled
+        @endif >
+        <input type="password" name="password" placeholder="Enter your password" @if (session()->has('loginLimit'))
+        disabled
+        @endif >
         <input type="submit" class="button" value="Login">
       </form>
     </div>
