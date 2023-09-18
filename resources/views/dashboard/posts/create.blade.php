@@ -55,13 +55,13 @@
    </div>
     
   <div class="mb-3">
-    <label for="description" class="form-label">Body</label>
+    <label for="body" class="form-label">Body</label>
     @error('body')
         <p class="text-danger">
             {{$message}}
         </p> 
     @enderror
-        <textarea name="description" id="description" cols="30" rows="20" required>
+        <textarea name="body" id="body" cols="30" rows="20" required>
 
         </textarea>
   </div>
