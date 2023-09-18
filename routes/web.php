@@ -23,7 +23,7 @@ Route::get('/ip', function (Request $request) {
     return $request->ip();
 });
 Route::get('/testing', function () {
-    return "dwimas budi";
+    return "wisnu";
 });
 
 Route::get('/dashboard', function () {
