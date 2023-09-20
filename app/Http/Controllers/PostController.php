@@ -24,5 +24,12 @@ class PostController extends Controller
             'posts' => Post::orderBy('created_at', 'desc')->get(),
         ]);
     }
+    public function show(Post $post)
+    {
+        return view('post', [
+            'title' => $post->title,
+            'post' => $post
+        ]);
+    }
     
 }

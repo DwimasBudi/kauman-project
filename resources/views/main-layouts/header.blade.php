@@ -13,7 +13,7 @@
         </div>
     </header>
     <div class="container-logo m-3">
-        <img src="img/logo.png" alt="logo-smada">
+        <img src="{{ asset('img/logo.png') }}" alt="logo-sd">
     </div>
     <nav class="navbar navbar-expand-lg bg-dark nav-main">
         <div class="container-fluid">
@@ -24,7 +24,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav text-light">
-                    <a class="nav-link" aria-current="page" href="#">Home</a>
+                    <a class="nav-link" aria-current="page" href="/">Home</a>
                     <a class="nav-link" href="#">Pengumuman</a>
                     <a class="nav-link" href="#">Berita</a>
                     <a class="nav-link" href="#">Prestasi</a>

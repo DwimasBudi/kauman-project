@@ -6,7 +6,9 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DashboardPostController;
 use Illuminate\Http\Request;
-
+use Spatie\Sitemap\Sitemap;
+use Spatie\Sitemap\Tags\Url;
+use App\Models\Post;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,6 +21,7 @@ use Illuminate\Http\Request;
 */
 
 Route::get('/', [PostController::class, 'index']);
+Route::get('/post/{post:slug}', [PostController::class, 'show']);
 Route::get('/admin', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate'])->middleware('throttle:loginx');
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
@@ -28,4 +31,15 @@ Route::get('/dashboard/posts/checkSlug/', [DashboardPostController::class, 'chec
 
 Route::get('/ip', function (Request $request) {
     return $request->ip();
+});
+Route::get('/sitemap', function () {
+    $sitemap = Sitemap::create();
+        // ->add(Url::create('/about-us'))
+        // ->add(Url::create('/contact_us'));
+
+    $post = Post::all();
+    foreach ($post as $post) {
+        $sitemap->add(Url::create("/post/{$post->slug}"));
+    }
+    $sitemap->writeToFile(public_path('sitemap.xml'));
 });
