@@ -26,8 +26,9 @@ Route::get('/admin', [LoginController::class, 'index'])->name('login')->middlewa
 Route::post('/login', [LoginController::class, 'authenticate'])->middleware('throttle:loginx');
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
 Route::get('/logout', [LoginController::class, 'logout']);
-Route::resource('/dashboard/posts/', DashboardPostController::class)->middleware('auth');
-Route::get('/dashboard/posts/checkSlug/', [DashboardPostController::class, 'checkSlug']);
+Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('auth');
+Route::get('/dashboard/post/checkSlug', [DashboardPostController::class, 'checkSlug'])->middleware('auth');
+Route::get('/dashboard/kont/', [DashboardPostController::class, 'kont'])->middleware('auth');
 
 Route::get('/ip', function (Request $request) {
     return $request->ip();
