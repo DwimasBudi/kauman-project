@@ -130,6 +130,7 @@ tinymce.init({
       }
       var contents = inputText;
       var modelId = "text-davinci-003";
+      // var modelId = "gpt-3.5-turbo";
       tinymce.activeEditor.setContent('Keajaiban AI Menanti (Tunggu Sebentar)...');
 
       $.ajax({
@@ -137,7 +138,7 @@ tinymce.init({
         type: "POST",
         headers: {
           "Content-Type": "application/json",
-          "Authorization": "Bearer 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"
+          "Authorization": "Bearer {{ env('OPEN_AI') }}",
         },
         data: JSON.stringify({
           prompt: contents,
@@ -173,7 +174,7 @@ tinymce.init({
         type: "POST",
         headers: {
           "Content-Type": "application/json",
-          "Authorization": "Bearer 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"
+          "Authorization": "Bearer",
         },
         data: JSON.stringify({
           prompt: contents,
@@ -190,7 +191,7 @@ tinymce.init({
           }
         },
         error: function (xhr, status, error) {
-          $("#body").val("Error: " + error);
+           tinymce.activeEditor.setContent("Error: " + error);
         }
       });
     });
