@@ -1,8 +1,9 @@
 @extends('main-layouts.main')
 @section('container')
-            <div class="container-fluid mt-3 w-100 d-flex justify-content-center carousel-container">
-            <div class="row carousel-wrap-row">
-                <div class="col-md-8 carousel-wrap">
+    <main>
+        <div class="container-fluids w-100 d-flex justify-content-center carousel-container">
+            <div class="rows carousel-wrap-row d-flex justify-content-center w-100">
+                <div class="col-md-12 carousel-wrap w-100">
                     <div id="carouselExampleCaptions" class="carousel slide bg-danger" data-bs-ride="carousel">
                         <div class="carousel-indicators">
                             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
@@ -14,7 +15,7 @@
                         </div>
                         <div class="carousel-inner h-100 w-100">
                             <div class="carousel-item active h-100">
-                                <a class="cover-link" href="/post/{{ $posts[0]->slug }}" target="_blank"></a>
+                                 <a class="cover-link" href="/post/{{ $posts[0]->slug }}" target="_blank"></a>
                                 <img src="{{ asset('storage/'.$posts[0]->image)  }}" class="d-block w-100 h-100" alt="...">
                                 <div class="carousel-caption">
                                     <a class="badge" href="">{{ $posts[0]->category->name }}</a>
@@ -46,84 +47,59 @@
                         </button>
                     </div>
                 </div>
-                <div class="col-md-4 d-flex flex-wrap main">
-                    @foreach ($posts->skip(3)->take(3) as $post)
-                    <div class="card text-bg-dark img-card mb-1">
-                        <a class="cover-link" href="/post/{{ $post->slug }}" target="_blank"></a>
-                        <img src="{{asset('storage/'. $post->image) }}" class="card-img" alt="...">
-                        <div class="card-img-overlay d-flex flex-column justify-content-end align-items-start">
-                            <a class="badge" href="">{{ $post->category->name }}</a>
-                            <p class="card-text">{{ $post->title }}</p>
+
+            </div>
+
+        </div>
+        <div class="continer-fluid d-flex justify-content-center mt-3 flex-wrap px-5">
+            <div class="container mx-0 px-0">
+                <h3>Artikel</h3>
+            </div>
+            <div class="owl-carousel owl-theme">
+                @foreach ($posts->skip(3)->take(6) as $post)
+                <div class="item">
+                    <a class="cover-link" href="/post/{{ $post->slug }}" target="_blank"></a>
+                        <div class="carousel-item-image">
+                            <img src="{{asset('storage/'. $post->image) }}" class="item-image">
                         </div>
-                    </div>
-                    @endforeach
+                        <div class="carousel-item-text">
+                            <h6 class="card-title">{{ $post->title }}</h6>
+                            <span class="card-text mb-0 fw-bold fs-8">sdnKauman</span><span class="fs-8"> - 7 July 2023</span>
+                        </div>
                 </div>
+                @endforeach
+            </div>
+        </div> 
+        <div class="container-fluid mt-3 px-0 mx-0">  
+                <div class="motivasi">
+                    <div class="item text-center">
+                        <blockquote>Jangan berhenti belajar, belajarlah walaupun itu hanya membaca kesimpulan buku paketmu.</blockquote>
+                        <cite>Dwimas Sang Guru</cite>
+                    </div>
             </div>
         </div>
-
-        <!-- Bagian kiri / BERITA -->
-
-        <div class="container-fluid mt-3">
-            <h3>Berita</h3>
+        <div class="container-fluid my-5 px-5">
             <div class="row">
-                <div class="col-lg-8 d-flex justify-content-start flex-wrap side-main">
-                         @php
-                             $berita= $posts->FirstWhere('category_id', 1);
-                         @endphp
-                        <div class="cards mt-2 card-main" style="width: 20rem">
-                            <a class="cover-link" href="/post/{{ $berita->slug }}" target="_blank"></a>
-                            <img src="{{asset('storage/'. $berita->image) }}" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <a href="https://youtube.com" class="badge" target="_blank">{{ $berita->category->name }}</a>
-                                <h5 class="mb-0">{{ $berita->title }}</h5>
-                                <span class="card-text mb-0 fw-bold fs-8">sdKauman</span><span class="fs-8"> - 7 July 2023</span>
-                                <p class="card-text text-justify" style="text-align:justify; font-size: 13px;">{{ $berita->excerpt }}</p>
-                            </div>
-                        </div>
-
-                        <div class="content ms-4 mt-2">
-                            @foreach ($posts->Where('category_id', 1)->skip(1)->take(4) as $post)
-                            <div class="cards mb-3 d-flex justify-content-between align-items-center" style="max-width: 330px; flex-wrap: nowrap;">
-                                <a class="cover-link" href="/post/{{ $post->slug }}" target="_blank"></a>
-                                    <img src="{{asset('storage/'. $post->image) }}" class="img-fluid rounded w-100 h-100" alt="...">
-                                    <div class="card-body ms-2">
-                                        <p class="card-text img-text-10 mb-0">{{ $post->title }}</p>
-                                        <a href="" class="badge ">{{ $post->category->name }}</a>
-                                        <span class="fs-8"> - 7 July 2023</span>
-                                    </div>
-                            </div>
-                            @endforeach
-                        </div>
-                        <div class="content">
-
-                        </div>
+                <div class="col-md-6 d-flex justify-content-center align-items-center">
+                    <img src="img/presiden.png" alt="" style="border-radius: 50px; height: 400px; max-width:450px; object-fit:cover;">
                 </div>
-                <!-- Samping kanan/ side / Pengumuman -->
-                <div class="col-lg-4">
-                    <h3>Pengumuman</h3>
-                    <div class="content">
-                         @foreach ($posts->Where('category_id', 3)->take(4) as $post)
-                        <div class="cards mb-3 d-flex justify-content-between align-items-center" style="max-width: 330px; flex-wrap: nowrap;">
-                            <a class="cover-link" href="/post/{{ $post->slug }}" target="_blank"></a>
-                            <img src="{{asset('storage/'. $post->image )}}" class="img-fluid rounded w-100 h-100" alt="...">
-                            <div class="card-body ms-2">
-                                <p class="card-text img-text-10 mb-0">{{ $post->title }}</p>
-                                <a href="" class="badge ">{{ $post->category->name }}</a>
-                                <span class="fs-8"> - 7 July 2023</span>
-                            </div>
-                        </div>
-                        @endforeach
-                    </div>
-                </div>
-                <!-- Akhir pengumuman -->
-            </div>
-            <!-- akhir div row-->
-            <div class="content">
-                <div class="row">
-                    <div class="col-md-8">
-                        {{-- Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti dolorem ducimus animi exercitationem perferendis ea voluptatem dolorum ullam maxime cum sunt, delectus vero. Distinctio quia sed dignissimos error soluta repellendus cum doloremque saepe reprehenderit non deserunt rerum, neque hic molestiae incidunt accusamus autem, eaque perspiciatis reiciendis excepturi, est mollitia totam. Deleniti voluptatibus nam rerum neque quos, exercitationem delectus eaque modi error nobis soluta explicabo officiis veniam tenetur minima corrupti! Nobis, perspiciatis vitae? Cumque quaerat et optio, ratione quidem consequatur! Culpa tempora asperiores officiis aspernatur veritatis unde inventore eius odit, ex natus ut iusto ipsa? Eum pariatur eveniet ipsam maxime optio. --}}
-                    </div>
+                <div class="col-md-6 justfy-text text-center">
+                    <h4>Sambuatan Kepala Sekolah</h4>
+                    <h6>SD Negeri Kauman Magetan</h6>
+                    <p class="text-justify" style="text-align: justify;">
+                        Assalamualaikum warahmatullahi wabarakaatuh Alhamdulillahirobbil aalamiin. Kita panjatkan puji syukur ke hadirat Allah
+                        SWT Tuhan Yang Maha Kuasa atas limpahan rahmat dan karunia-Nya yang selalu diberikan kepada kita semua. Selamat datang
+                        di website SD Negeri Kauman Magetan, media informasi sekolah yang dapat diakses dengan mudah oleh siswa, orang tua/wali,
+                        alumni dan stake holder secara luas . Pendidikan sebagai kunci kemajuan dan keunggulan bangsa, sekolah memiliki tanggung
+                        jawab menyiapkan sumber daya manusia yang tangguh, adaptif terhadap perubahan yang begitu cepat. SD Negeri Kauman Magetan
+                        melaksanakan proses pendidikan untuk membekali dan mengantarkan lulusannya berprestasi unggul, mampu bersaing di tingkat
+                        global, berbudaya, peduli lingkungan, berwawasan Ilmu
+                    </p>
                 </div>
             </div>
         </div>
+        <div class="container-fluid">
+            
+        </div>
+    </main>
 @endsection

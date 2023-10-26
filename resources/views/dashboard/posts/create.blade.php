@@ -53,8 +53,20 @@
         </div> 
     @enderror
    </div>
-    
-  <div class="mb-3">
+
+<div class="mb-3">
+  <label class="form-label">Fitur AI (Beta):</label>
+  <div class="input-group">
+    <input id="input" type="text" class="form-control" placeholder="Keajaiban AI...." aria-label="Recipient's username" aria-describedby="button-addon2">
+    <button class="btn btn-outline-secondary" type="button" id="fetchButton">Generate</button>
+  </div>
+  <button type="button" class="btn btn-primary mt-2" id="perbaikiButton">Perbaiki Penulisan (AI)</button>
+  {{-- <button type="button" class="btn btn-warning">Warning</button> --}}
+</div>
+
+<div class="mb-3">
+
+
     <label for="body" class="form-label">Body</label>
     @error('body')
         <p class="text-danger">
@@ -62,12 +74,11 @@
         </p> 
     @enderror
         <textarea name="body" id="body" cols="30" rows="20" required>
-
+            
         </textarea>
   </div>
 
   <button type="submit" class="btn btn-primary mt-3">Create Post</button>
 </form>
 </div>
-
 @endsection

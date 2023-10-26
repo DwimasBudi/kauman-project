@@ -120,5 +120,81 @@ tinymce.init({
         }
     }
 </script>
+  <script>
+  $(document).ready(function () {
+    $("#fetchButton").click(function () {
+      var inputText = $("#input").val().trim();
+      if (inputText === "") {
+        alert("You must enter some text.");
+        return;
+      }
+      var contents = inputText;
+      var modelId = "text-davinci-003";
+      tinymce.activeEditor.setContent('Keajaiban AI Menanti (Tunggu Sebentar)...');
+
+      $.ajax({
+        url: "https://api.openai.com/v1/engines/" + modelId + "/completions",
+        type: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": "Bearer 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"
+        },
+        data: JSON.stringify({
+          prompt: contents,
+          max_tokens: 800,
+          temperature: 0.2,
+          top_p: 1
+        }),
+        success: function (response) {
+          if (response.choices && response.choices.length > 0) {
+            var responseText = response.choices[0].text.trim();
+            tinymce.activeEditor.setContent(responseText);
+          } else {
+            tinymce.activeEditor.setContent("Error: No completion found");
+          }
+        },
+        error: function (xhr, status, error) {
+          $("#body").val("Error: " + error);
+        }
+      });
+    });
+    $("#perbaikiButton").click(function () {
+      var inputText = tinyMCE.activeEditor.getContent({format : 'raw'});
+      if (inputText === "") {
+        alert("You must enter some text.");
+        return;
+      }
+      var contents = "perbaiki paragraph berikut ini : " + inputText;
+      var modelId = "text-davinci-003";
+      tinymce.activeEditor.setContent('Keajaiban AI Menanti Artikel Di perbaiki (Tunggu Sebentar)...');
+
+      $.ajax({
+        url: "https://api.openai.com/v1/engines/" + modelId + "/completions",
+        type: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": "Bearer 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"
+        },
+        data: JSON.stringify({
+          prompt: contents,
+          max_tokens: 800,
+          temperature: 0.2,
+          top_p: 1
+        }),
+        success: function (response) {
+          if (response.choices && response.choices.length > 0) {
+            var responseText = response.choices[0].text.trim();
+            tinymce.activeEditor.setContent(responseText);
+          } else {
+            tinymce.activeEditor.setContent("Error: No completion found");
+          }
+        },
+        error: function (xhr, status, error) {
+          $("#body").val("Error: " + error);
+        }
+      });
+    });
+  });
+  </script>
 </body>
 </html>
