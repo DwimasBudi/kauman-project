@@ -385,3 +385,31 @@ cite {
 }
 
 /* MAIN PAGE */
+
+#list{
+    list-style: none !important;
+}
+#list li{
+    display: flex;
+    justify-content: baseline;
+    margin: 20px 0;
+}
+#list li p{
+    margin-bottom: 0;
+    line-height: 20px;
+}
+#list i{
+    display: flex;
+    align-items: center;
+    /* border: 1px solid rgb(138, 136, 136, 0.5); */
+    padding: 0 20px;
+    margin: 5px;
+    line-height: 0;
+    font-size: 25px;
+}
+
+ol li{
+    font-size: 16px;
+        color: #757783;
+        line-height: 28.8px;
+}

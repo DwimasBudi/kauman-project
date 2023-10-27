@@ -174,7 +174,7 @@ tinymce.init({
         type: "POST",
         headers: {
           "Content-Type": "application/json",
-          "Authorization": "Bearer",
+          "Authorization": "Bearer {{ env('OPEN_AI') }}",
         },
         data: JSON.stringify({
           prompt: contents,

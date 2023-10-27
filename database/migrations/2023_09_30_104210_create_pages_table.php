@@ -15,6 +15,14 @@ class CreatePagesTable extends Migration
     {
         Schema::create('pages', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('category_id')->references('id')->on('categories')->onDelete('cascade');
+            // $table->foreignId('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->string('title');
+            $table->string('slug')->unique();
+            $table->string('image')->nullable();
+            $table->text('excerpt');
+            $table->text('body');
+            $table->timestamp('published_at')->nullable();
             $table->timestamps();
         });
     }
