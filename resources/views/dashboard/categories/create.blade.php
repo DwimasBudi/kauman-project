@@ -5,12 +5,11 @@
 </div>
 <div class="col-lg-12">
     {{-- /dashboard/posts + method POST otomais ke method store --}}
-<form action="/dashboard/posts/{{ $post->slug }}" method="post" class="mb-5" enctype="multipart/form-data">
-    @method("put")
+<form action="/dashboard/posts" method="post" class="mb-5" enctype="multipart/form-data">
     @csrf
   <div class="mb-3">
     <label for="title" class="form-label">Title</label>
-    <input type="text" name="title" class="form-control @error('title') is-invalid @enderror" id="title" placeholder="New Post Title" autofocus value="{{ old('title',$post->title) }}">
+    <input type="text" name="title" class="form-control @error('title') is-invalid @enderror" id="title" placeholder="New Post Title" autofocus value="{{ old('title') }}">
     @error('title')
         <div class="invalid-feedback">
             {{$message}}
@@ -19,7 +18,7 @@
   </div>
   <div class="mb-3">
     <label for="slug" class="form-label">Slug</label>
-    <input type="text" name="slug" class="form-control @error('slug') is-invalid @enderror" id="slug" placeholder="new-post-slug" value="{{ old('slug',$post->slug) }}">
+    <input type="text" name="slug" class="form-control @error('slug') is-invalid @enderror" id="slug" placeholder="new-post-slug" value="{{ old('slug') }}">
     @error('slug')
         <div class="invalid-feedback">
             {{$message}}
@@ -31,7 +30,7 @@
     <select class="form-select @error('category') is-invalid @enderror" name="category_id" id="category" required>
         <option selected disabled>Pilih kategory</option>
         @foreach ($categories as $category)  
-            @if (old('category_id', $post->category_id) == $category->id)
+            @if (old('category_id') == $category->id)
                 <option value="{{ $category->id }}" selected>{{ $category->name }}</option>
             @else
                 <option value="{{ $category->id }}">{{ $category->name }}</option>
@@ -45,9 +44,8 @@
     @enderror
   </div>
   <div class="mb-3">
-        <label for="image" class="form-label">image</label>
-        <input type="hidden" name="oldImage" value="{{ $post->image }}"> 
-        <img src="{{ asset('storage/'.$post->image) }}" class="img-preview img-fluid mb-3 col-sm-5 d-block">
+        <label for="image" class="form-label">Thumbnail :</label>
+        <img class="img-preview img-fluid mb-3 col-sm-5">
         <input class="form-control @error('image') is-invalid @enderror" type="file" id="image" name="image" onchange="previewImage()">
     @error('image')
         <div class="invalid-feedback">
@@ -55,16 +53,20 @@
         </div> 
     @enderror
    </div>
+
 <div class="mb-3">
-  <label class="form-label"><i class="bi bi-magic"></i> Fitur AI (Beta):</label>
+  <label class="form-label">Fitur AI (Beta):</label>
   <div class="input-group">
-    <input id="promptInput" type="text" class="form-control" placeholder="Keajaiban AI...." aria-label="Recipient's username" aria-describedby="button-addon2">
-    <button class="btn btn-outline-secondary" type="button" id="generateBtn"><i class="bi bi-magic"></i> Generate</button>
+    <input id="input" type="text" class="form-control" placeholder="Keajaiban AI...." aria-label="Recipient's username" aria-describedby="button-addon2">
+    <button class="btn btn-outline-secondary" type="button" id="fetchButton">Generate</button>
   </div>
-  <button type="button" class="btn btn-primary mt-2" id="perbaikiButton"><i class="bi bi-magic"></i> Perbaiki Penulisan (AI)</button>
+  <button type="button" class="btn btn-primary mt-2" id="perbaikiButton">Perbaiki Penulisan (AI)</button>
   {{-- <button type="button" class="btn btn-warning">Warning</button> --}}
 </div>
-  <div class="mb-3">
+
+<div class="mb-3">
+
+
     <label for="body" class="form-label">Body</label>
     @error('body')
         <p class="text-danger">
@@ -72,7 +74,7 @@
         </p> 
     @enderror
         <textarea name="body" id="body" cols="30" rows="20" required>
-          {{ old("body",$post->body) }}
+            
         </textarea>
   </div>
 

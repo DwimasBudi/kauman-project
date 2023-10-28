@@ -8,7 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <!----===== Iconscout CSS ===== -->
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
     <link rel="stylesheet" href="/css/dashboard-style.css">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     {{-- Data Table --}}
@@ -27,7 +27,7 @@
     </section>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-    <script src="/js/dashboard-script.js"></script>
+    {{-- <script src="/js/dashboard-script.js"></script> --}}
 
     {{-- Data Table --}}
     <script>
@@ -49,7 +49,7 @@
     // TinyMCE
 tinymce.init({
   selector: 'textarea',
-    plugins: 'advlist autolink lists link image charmap preview anchor pagebreak code searchreplace wordcount visualblocks visualchars fullscreen insertdatetime media nonbreaking save table directionality emoticons template',
+    plugins: 'advlist autolink lists link image charmap preview anchor pagebreak code searchreplace wordcount visualblocks visualchars fullscreen insertdatetime media nonbreaking save table directionality emoticons',
     toolbar: 'undo redo | formatselect | bold italic underline strikethrough | forecolor backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | link image media | code',
     promotion: false,
     branding: false,
@@ -120,82 +120,124 @@ tinymce.init({
         }
     }
 </script>
-  <script>
-  $(document).ready(function () {
-    $("#fetchButton").click(function () {
-      var inputText = $("#input").val().trim();
-      if (inputText === "") {
-        alert("You must enter some text.");
-        return;
-      }
-      var contents = inputText;
-      var modelId = "text-davinci-003";
-      // var modelId = "gpt-3.5-turbo";
-      tinymce.activeEditor.setContent('Keajaiban AI Menanti (Tunggu Sebentar)...');
+<script>
+const API_URL = "https://api.openai.com/v1/chat/completions";
 
-      $.ajax({
-        url: "https://api.openai.com/v1/engines/" + modelId + "/completions",
-        type: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Authorization": "Bearer {{ env('OPEN_AI') }}",
-        },
-        data: JSON.stringify({
-          prompt: contents,
-          max_tokens: 800,
-          temperature: 0.2,
-          top_p: 1
-        }),
-        success: function (response) {
-          if (response.choices && response.choices.length > 0) {
-            var responseText = response.choices[0].text.trim();
-            tinymce.activeEditor.setContent(responseText);
-          } else {
-            tinymce.activeEditor.setContent("Error: No completion found");
-          }
-        },
-        error: function (xhr, status, error) {
-          $("#body").val("Error: " + error);
-        }
-      });
-    });
-    $("#perbaikiButton").click(function () {
-      var inputText = tinyMCE.activeEditor.getContent({format : 'raw'});
-      if (inputText === "") {
-        alert("You must enter some text.");
-        return;
-      }
-      var contents = "perbaiki paragraph berikut ini : " + inputText;
-      var modelId = "text-davinci-003";
-      tinymce.activeEditor.setContent('Keajaiban AI Menanti Artikel Di perbaiki (Tunggu Sebentar)...');
+const generateBtn = document.getElementById("generateBtn");
+const perbaikiButton = document.getElementById("perbaikiButton");
+// const stopBtn = document.getElementById("stopBtn");
+let editor = tinymce.activeEditor;
 
-      $.ajax({
-        url: "https://api.openai.com/v1/engines/" + modelId + "/completions",
-        type: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Authorization": "Bearer {{ env('OPEN_AI') }}",
-        },
-        data: JSON.stringify({
-          prompt: contents,
-          max_tokens: 800,
-          temperature: 0.2,
-          top_p: 1
-        }),
-        success: function (response) {
-          if (response.choices && response.choices.length > 0) {
-            var responseText = response.choices[0].text.trim();
-            tinymce.activeEditor.setContent(responseText);
-          } else {
-            tinymce.activeEditor.setContent("Error: No completion found");
-          }
-        },
-        error: function (xhr, status, error) {
-           tinymce.activeEditor.setContent("Error: " + error);
-        }
-      });
+
+let controller = null; 
+
+const generate = async (promptInput) => {
+
+  if (promptInput=="") {
+    alert("Masukkan Perintah");
+    return;
+  }
+
+  generateBtn.disabled = true;
+  // stopBtn.disabled = false;
+  tinymce.activeEditor.setContent('Keajaiban Ai menanti...');
+  
+  controller = new AbortController();
+  const signal = controller.signal;
+
+  try {
+
+    const response = await fetch(API_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer {{ env('OPEN_AI') }}`,
+      },
+      body: JSON.stringify({
+        model: "gpt-3.5-turbo",
+        messages: [{ role: "user", content: promptInput }],
+        max_tokens: 900,
+        temperature: 0.2,
+        stream: true, 
+      }),
+      signal, 
     });
-  });
-  </script>
+
+    const reader = response.body.getReader();
+    const decoder = new TextDecoder("utf-8");
+    tinymce.activeEditor.setContent('');
+
+    while (true) {
+      const { done, value } = await reader.read();
+      if (done) {
+        break;
+      }
+
+      const chunk = decoder.decode(value);
+      const lines = chunk.split("\n");
+      const parsedLines = lines
+        .map((line) => line.replace(/^data: /, "").trim()) 
+        .filter((line) => line !== "" && line !== "[DONE]") 
+        .map((line) => JSON.parse(line)); 
+
+      for (const parsedLine of parsedLines) {
+        const { choices } = parsedLine;
+        const { delta } = choices[0];
+        const { content } = delta;
+
+        if (content) {
+          var currentContent = tinymce.activeEditor.getContent({ format: 'text' });
+          var newContent = currentContent + content;
+          tinymce.activeEditor.setContent(newContent);
+        }
+      }
+    }
+  } catch (error) {
+
+    if (signal.aborted) {
+      tinymce.activeEditor.setContent("Request aborted");
+    } else {
+      console.error("Error:", error);
+      tinymce.activeEditor.setContent("Error occurred while generating.");
+    }
+  } finally {
+
+    generateBtn.disabled = false;
+    // stopBtn.disabled = true;
+    controller = null; 
+  }
+};
+
+const stop = () => {
+
+  if (controller) {
+    controller.abort();
+    controller = null;
+  }
+};
+
+// promptInput.addEventListener("keyup", (event) => {
+//   if (event.key === "Enter") {
+//     let promptInput = document.getElementById("promptInput");
+//     generate(promptInput);
+//   }
+// });
+
+generateBtn.addEventListener("click", function() {
+  var promptInput = document.getElementById("promptInput").value;
+  // console.log(promptInput);
+  generate(promptInput);
+});
+
+// stopBtn.addEventListener("click", stop);
+perbaikiButton.addEventListener("click", function() {
+  let promptInput = "perbaiki paragraph berikut ini : " + tinymce.activeEditor.getContent({ format: 'text' });
+  // console.log(promptInput);
+  generate(promptInput);
+});
+
+
+
+</script>
 </body>
 </html>

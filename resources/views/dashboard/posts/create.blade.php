@@ -1,6 +1,6 @@
 @extends('dashboard.layouts.main')
 @section('container')
-<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-5 mt-3 pb-2 mb-3 border-bottom">
     <h1 class="h2">Create Post</h1>
 </div>
 <div class="col-lg-12">
@@ -57,10 +57,10 @@
 <div class="mb-3">
   <label class="form-label">Fitur AI (Beta):</label>
   <div class="input-group">
-    <input id="input" type="text" class="form-control" placeholder="Keajaiban AI...." aria-label="Recipient's username" aria-describedby="button-addon2">
-    <button class="btn btn-outline-secondary" type="button" id="fetchButton">Generate</button>
+    <input id="promptInput" type="text" class="form-control" placeholder="Keajaiban AI...." aria-label="Recipient's username" aria-describedby="button-addon2">
+    <button class="btn btn-outline-secondary" type="button" id="generateBtn"><i class="bi bi-magic"></i> Generate</button>
   </div>
-  <button type="button" class="btn btn-primary mt-2" id="perbaikiButton">Perbaiki Penulisan (AI)</button>
+  <button type="button" class="btn btn-primary mt-2" id="perbaikiButton"><i class="bi bi-magic"></i> Perbaiki Penulisan (AI)</button>
   {{-- <button type="button" class="btn btn-warning">Warning</button> --}}
 </div>
 

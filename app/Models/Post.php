@@ -14,7 +14,7 @@ class Post extends Model
 
     protected $guarded = ['id'];
 
-    protected $with = ['user', 'category'];
+    protected $with = ['user', 'category', 'comment'];
 
     public function category()
     {
@@ -24,7 +24,10 @@ class Post extends Model
     {
         return $this->belongsTo(User::class);
     }
-
+    public function comment()
+    {
+        return $this->hasMany(Comment::class);
+    }
     public function scopeFilter($query, array $filters)
     {
         if (isset($filters['search'])) {

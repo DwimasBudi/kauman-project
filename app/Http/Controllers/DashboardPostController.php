@@ -111,6 +111,7 @@ class DashboardPostController extends Controller
      */
     public function edit(Post $post)
     {
+        // return dd($post);
         return view("dashboard.posts.edit", [
             'post' => $post,
             'categories' => Category::orderBy('name')->get(),
@@ -129,7 +130,7 @@ class DashboardPostController extends Controller
         $rules = [
             'title' => 'required|max:255|min:4',
             'category_id' => 'required',
-            'image' => 'image|file|max:1024',
+            'image' => 'image|file|max:5024',
             'body' => 'required'
         ];
 

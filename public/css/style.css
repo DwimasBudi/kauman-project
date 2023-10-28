@@ -388,11 +388,12 @@ cite {
 
 #list{
     list-style: none !important;
+    /* padding-left: 0 !important; */
 }
 #list li{
     display: flex;
     justify-content: baseline;
-    margin: 20px 0;
+    margin: 33px 0;
 }
 #list li p{
     margin-bottom: 0;
@@ -404,8 +405,9 @@ cite {
     /* border: 1px solid rgb(138, 136, 136, 0.5); */
     padding: 0 20px;
     margin: 5px;
-    line-height: 0;
-    font-size: 25px;
+    font-size: 24px;
+    min-width: 45px;
+    height: 100%;
 }
 
 ol li{

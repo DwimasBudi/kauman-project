@@ -55,15 +55,7 @@
         </div> 
     @enderror
    </div>
-<div class="mb-3">
-  <label class="form-label"><i class="bi bi-magic"></i> Fitur AI (Beta):</label>
-  <div class="input-group">
-    <input id="promptInput" type="text" class="form-control" placeholder="Keajaiban AI...." aria-label="Recipient's username" aria-describedby="button-addon2">
-    <button class="btn btn-outline-secondary" type="button" id="generateBtn"><i class="bi bi-magic"></i> Generate</button>
-  </div>
-  <button type="button" class="btn btn-primary mt-2" id="perbaikiButton"><i class="bi bi-magic"></i> Perbaiki Penulisan (AI)</button>
-  {{-- <button type="button" class="btn btn-warning">Warning</button> --}}
-</div>
+    
   <div class="mb-3">
     <label for="body" class="form-label">Body</label>
     @error('body')

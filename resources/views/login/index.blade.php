@@ -31,10 +31,10 @@
       <header>Admin Login</header>
       <form action="login" method="POST">
         @csrf
-        <input type="text" name="username" placeholder="Enter your username" @if (session()->has('loginLimit'))
+        <input type="text" name="username" placeholder="username" @if (session()->has('loginLimit'))
         disabled
         @endif >
-        <input type="password" name="password" placeholder="Enter your password" @if (session()->has('loginLimit'))
+        <input type="password" name="password" placeholder="password" @if (session()->has('loginLimit'))
         disabled
         @endif >
         <input type="submit" class="button" value="Login">
