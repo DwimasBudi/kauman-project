@@ -31,6 +31,6 @@ class SambutanController extends Controller
         }
         Sambutan::where('id', $Sambutan->id)->update($validatedData);
 
-        return redirect('/dashboard/posts')->with('success', 'Sambutan Updated');
+        return redirect('/dashboard')->with('success', 'Sambutan Updated');
     }
 }

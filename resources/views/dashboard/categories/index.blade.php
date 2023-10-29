@@ -10,7 +10,7 @@
 </div>
 @endif
     <div class="table-responsive col-lg-12">
-      <a href="/dashboard/categories/create" class="btn btn-primary mb-3">Create new post</a>
+      <a href="/dashboard/categories/create" class="btn btn-primary mb-3">Create new category</a>
         <table id="tabel-data" class="table table-striped table-bordered" width="100%" cellspacing="0">
           <thead>
             <tr>

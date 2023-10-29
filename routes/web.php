@@ -36,9 +36,9 @@ Route::get('/logout', [LoginController::class, 'logout']);
 Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('auth');
 Route::resource('/dashboard/categories', CategoryDashboardController::class)->middleware('auth');
 Route::resource('/comment', CommentController::class);
-Route::post('/comment', [CommentController::class, 'store']);
+// Route::post('/comment', [CommentController::class, 'store']);
 // Route::resource('/dashboard/categories', CategoryController::class)->middleware('auth');
-Route::get('/dashboard/categories/{category:slug}/edit', [CategoryDashboardController::class, 'edit']);
+// Route::get('/dashboard/categories/{category:slug}/edit', [CategoryDashboardController::class, 'edit']);
 
 Route::get('/dashboard/visimisi/{visimisi:slug}/edit', [VisiDashboardController::class, 'show']);
 Route::post('/dashboard/visimisi/{visimisi:slug}/update', [VisiDashboardController::class, 'update']);
@@ -63,5 +63,6 @@ Route::get('/sitemap', function () {
         $sitemap->add(Url::create("/post/{$post->slug}"));
     }
     $sitemap->writeToFile(public_path('sitemap.xml'));
-    return redirect('/sitemap.xml');
+    // return redirect('/sitemap.xml');
+    return redirect('/dashboard')->with('success', 'Sitemap Has Benn Updated');
 });

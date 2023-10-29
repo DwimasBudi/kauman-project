@@ -32,6 +32,6 @@ class VisiDashboardController extends Controller
         }
         VisiMisi::where('id', $visimisi->id)->update($validatedData);
 
-        return redirect('/dashboard/posts')->with('success', 'Visi Misi Updated');
+        return redirect('/dashboard')->with('success', 'Visi Misi Updated');
     }
 }

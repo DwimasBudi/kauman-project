@@ -1,6 +1,11 @@
 @extends('dashboard.layouts.main')
 @section('container')
         <div class="dash-content">
+            @if (session()->has('success'))
+            <div class="alert alert-success col-lg-10" role="alert">
+            {{ session('success') }}
+            </div>
+            @endif
             <div class="overview">
                 <div class="title">
                     <i class="uil uil-tachometer-fast-alt"></i>

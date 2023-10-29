@@ -15,7 +15,7 @@
                         </div>
                         <div class="carousel-inner h-100 w-100">
                             <div class="carousel-item active h-100">
-                                 <a class="cover-link" href="/post/{{ $posts[0]->slug }}" target="_blank"></a>
+                                 <a class="cover-link" href="/post/{{ $posts[0]->slug }}"></a>
                                 <img src="{{ asset('storage/'.$posts[0]->image)  }}" class="d-block w-100 h-100" alt="...">
                                 <div class="carousel-caption">
                                     <a class="badge" href="">{{ $posts[0]->category->name }}</a>
@@ -26,7 +26,7 @@
                             </div>
                             @foreach ($posts->skip(1)->take(2) as $post)
                             <div class="carousel-item h-100">
-                                <a class="cover-link" href="/post/{{ $post->slug }}" target="_blank"></a>
+                                <a class="cover-link" href="/post/{{ $post->slug }}"></a>
                                 <img src="{{ asset('storage/'. $post->image) }}" class="d-block w-100 h-100" alt="...">
                                 <div class="carousel-caption">
                                     <a class="badge" href="">{{ $post->category->name }}</a>
@@ -58,7 +58,7 @@
             <div class="owl-carousel owl-theme">
                 @foreach ($posts->skip(3)->take(6) as $post)
                 <div class="item">
-                    <a class="cover-link" href="/post/{{ $post->slug }}" target="_blank"></a>
+                    <a class="cover-link" href="/post/{{ $post->slug }}"></a>
                         <div class="carousel-item-image">
                             <img src="{{asset('storage/'. $post->image) }}" class="item-image">
                         </div>
@@ -91,10 +91,10 @@
                     </p>
                 </div>
             </div>
-            <div class="row mt-5 pt-5 px-5">
+            <div id="visi-misi" class="row mt-5 pt-5 px-5 p-md-0">
                 <div class="col-md-6 justfy-text">
-                    <h2>Visi Misi</h2>
-                    <h6>SD Negeri Kauman Magetan</h6>
+                    <h2 class="text-center-md">Visi Misi</h2>
+                    <h6 class="text-center-md">SD Negeri Kauman Magetan</h6>
                     <h6>Visi : {{ strip_tags($visi->visi) }}</h6>
                     <h6>Misi :</h6>
                     {!! $visi->misi !!}
@@ -104,11 +104,9 @@
                 </div>
             </div>
         </div>
-        <div class="container-fluids">
-                <!-- Start Contact Info
-    ============================================= -->
-    <div id="contact" class="contact-info-area bg-gray default-padding">
-        <div class="container mx-5 px-5">
+        <div id="contact" class="container-fluids overflow-hidden">
+    <div class="contact-info-area bg-gray default-padding">
+        <div class="container mx-5 px-5 p-md-0 m-md-0">
             <div class="row">
                 <div class="site-heading text-center">
                     <div class="col-lg-12 text-center">
@@ -116,14 +114,12 @@
                     </div>
                 </div>
             </div>
-            <div class="row mt-3">
-                <!-- Start Maps & Contact Form -->
+            <div class="row mt-3 g-0 ">
                 <div class="row maps-form">
                     <div class="col-lg-6 maps text-center">
                         <h3 class="text-center">Denah Lokasi</h3>
-                        <div class="google-maps">
+                        <div class="google-maps text-center-md">
                             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3955.1806041478035!2d111.42928877500253!3d-7.555276992458495!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e79eae0e07eb059%3A0xf93e92429b671e19!2sSD%20NEGERI%20Kauman%201!5e0!3m2!1sid!2sid!4v1698394203543!5m2!1sid!2sid" width="450" height="320" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                            {{-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.9061351041387!2d110.35039961432655!3d-7.799761879583066!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a57f4fa62fdab%3A0x4d7d92f9032750f0!2sSMA+Negeri+1+Teladan+Yogyakarta!5e0!3m2!1sid!2sid!4v1553142191227" width="500" height="350" frameborder="0" style="border:0" allowfullscreen></iframe> --}}
                         </div>
                     </div>
                     <div class="col-lg-6 form">
@@ -150,11 +146,9 @@
                         
                     </div>
                 </div>
-                <!-- End Maps & Contact Form -->
             </div>
         </div>
     </div>
-    <!-- End Contact Info -->
 
         </div>
     </main>

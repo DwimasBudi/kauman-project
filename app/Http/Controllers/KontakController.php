@@ -34,6 +34,6 @@ class KontakController extends Controller
         }
         Kontak::where('id', $Kontak->id)->update($validatedData);
 
-        return redirect('/dashboard/posts')->with('success', 'Kontak Updated');
+        return redirect('/dashboard')->with('success', 'Kontak Updated');
     }
 }

@@ -2,12 +2,10 @@
         <div class="container-fluid d-flex justify-content-between w-100" style="background-color: white; height: 40px;">
             <div class="navbar-nav text-dark w-100 d-flex justify-content-start flex-row">
                 <a class="nav-link text-dark mx-1" href="#">Profil</a>
-                <a class="nav-link text-dark mx-1" href="#">Visi-Misi</a>
-                <a class="nav-link text-dark mx-1" href="#">Kontak</a>
                 <a class="nav-link text-dark mx-1" href="/admin">Admin</a>
                 <a class="nav-link text-dark mx-1" href="#">Youtube</a>
                 <a class="nav-link text-dark mx-1" href="#">Instagram</a>
-                <a class="nav-link text-dark mx-1" href="#">Twitter</a>
+                <a class="nav-link text-dark mx-1" href="#">Whatsapp</a>
             </div>
         </div>
     </header>
@@ -31,10 +29,13 @@
                         <a class="nav-link text-light" href="#">Pengumuman</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="#">Berita</a>
+                        <a class="nav-link text-light" href="#">Prestasi</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="#">Prestasi</a>
+                        <a class="nav-link text-light" href="{{ asset('/#visi-misi') }}">Visi-Misi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="{{ asset('/#contact') }}">Kontak</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"

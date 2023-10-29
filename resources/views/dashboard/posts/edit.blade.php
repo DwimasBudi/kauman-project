@@ -76,7 +76,7 @@
         </textarea>
   </div>
 
-  <button type="submit" class="btn btn-primary mt-3">Create Post</button>
+  <button type="submit" class="btn btn-primary mt-3">Update Post</button>
 </form>
 </div>
 @endsection

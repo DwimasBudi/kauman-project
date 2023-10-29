@@ -20,26 +20,12 @@
                     <aside class="widget widget_categories">
                         <h3 class="widget-title py-3 px-4"><span>Category</span></h3>
                         <ul>
-                            <li class="cat-item">
-                                <a href="#">Akademik</a>
-                                <span class="count mx-5">(3)</span>
-                            </li>
-                            <li class="cat-item">
-                                <a href="#">Prestasi</a> 
-                                <span class="count mx-5">(3)</span>
-                            </li>
-                            <li class="cat-item">
-                                <a href="#">Berita</a>
-                                <span class="count mx-5">(3)</span>
-                            </li>
-                            <li class="cat-item">
-                                <a href="#">Pengumuman</a>
-                                <span class="count mx-5">(3)</span>
-                            </li>
-                            <li class="cat-item">
-                                <a href="#">Akademik</a>
-                                <span class="count mx-5">(3)</span>
-                            </li>
+                          @foreach ($categories as $category)
+                          <li class="cat-item">
+                            <a href="#">{{ $category->name }}</a>
+                            <span class="count mx-5"> ({{ $postx->where('category_id',$category->id)->count() }})</span>
+                          </li>
+                          @endforeach
                         </ul>
                     </aside>
                     <aside class="widget widget_post pb-3">

@@ -72,7 +72,7 @@ class CommentController extends Controller
      */
     public function edit(Comment $comment)
     {
-        //
+        return dd($comment);
     }
 
     /**
@@ -96,6 +96,6 @@ class CommentController extends Controller
     public function destroy(Comment $comment)
     {
         Comment::destroy($comment->id);
-        return back();
+        return redirect('/comment')->with('success', 'Comment Has Ben Deleted');
     }
 }
