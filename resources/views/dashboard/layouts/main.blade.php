@@ -125,7 +125,7 @@ const API_URL = "https://api.openai.com/v1/chat/completions";
 
 const generateBtn = document.getElementById("generateBtn");
 const perbaikiButton = document.getElementById("perbaikiButton");
-// const stopBtn = document.getElementById("stopBtn");
+const stopBtn = document.getElementById("stopBtn");
 let editor = tinymce.activeEditor;
 
 
@@ -139,7 +139,7 @@ const generate = async (promptInput) => {
   }
 
   generateBtn.disabled = true;
-  // stopBtn.disabled = false;
+  stopBtn.disabled = false;
   tinymce.activeEditor.setContent('Keajaiban Ai menanti...');
   
   controller = new AbortController();
@@ -195,15 +195,19 @@ const generate = async (promptInput) => {
   } catch (error) {
 
     if (signal.aborted) {
-      tinymce.activeEditor.setContent("Request aborted");
+      var currentContent = tinymce.activeEditor.getContent({ format: 'text' });
+      var newContent = currentContent + " ............(((STOP)))........";
+      tinymce.activeEditor.setContent(newContent);
     } else {
       console.error("Error:", error);
-      tinymce.activeEditor.setContent("Error occurred while generating.");
+      var currentContent = tinymce.activeEditor.getContent({ format: 'text' });
+      var newContent = currentContent + " ............Error occurred while generating........";
+      tinymce.activeEditor.setContent(newContent);
     }
   } finally {
 
     generateBtn.disabled = false;
-    // stopBtn.disabled = true;
+    stopBtn.disabled = true;
     controller = null; 
   }
 };
@@ -229,7 +233,7 @@ generateBtn.addEventListener("click", function() {
   generate(promptInput);
 });
 
-// stopBtn.addEventListener("click", stop);
+stopBtn.addEventListener("click", stop);
 perbaikiButton.addEventListener("click", function() {
   let promptInput = "perbaiki paragraph berikut ini : " + tinymce.activeEditor.getContent({ format: 'text' });
   // console.log(promptInput);
