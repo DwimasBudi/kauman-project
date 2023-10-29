@@ -128,7 +128,7 @@ const perbaikiButton = document.getElementById("perbaikiButton");
 const stopBtn = document.getElementById("stopBtn");
 let editor = tinymce.activeEditor;
 
-
+stopBtn.disabled = true;
 let controller = null; 
 
 const generate = async (promptInput) => {
