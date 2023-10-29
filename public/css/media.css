@@ -108,5 +108,9 @@
     .text-center-md{
         text-align: center;
     }
+    .cr-width{
+        height: 400px !important;
+        object-fit: cover;
+    }
 }
 

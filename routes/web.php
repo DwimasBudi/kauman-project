@@ -29,6 +29,7 @@ use App\Models\Post;
 
 Route::get('/', [PostController::class, 'index']);
 Route::get('/post/{post:slug}', [PostController::class, 'show']);
+Route::get('/artikel', [PostController::class, 'blog']);
 Route::get('/admin', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate'])->middleware('throttle:loginx');
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');

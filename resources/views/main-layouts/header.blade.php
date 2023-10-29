@@ -26,10 +26,10 @@
                         <a class="nav-link text-light" aria-current="page" href="https://unipkma.dwimasbudi.my.id/">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="#">Pengumuman</a>
+                        <a class="nav-link text-light" href="{{ asset('/artikel?category=pengumuman') }}">Pengumuman</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="#">Prestasi</a>
+                        <a class="nav-link text-light" href="{{ asset('/artikel?category=prestasi') }}">Prestasi</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-light" href="{{ asset('/#visi-misi') }}">Visi-Misi</a>
@@ -40,15 +40,16 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
-                            Dropdown
+                            Artikel
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="{{ asset('/artikel?category=prestasi') }}">Prestasi</a></li>
+                            <li><a class="dropdown-item" href="{{ asset('/artikel?category=berita') }}">Berita</a></li>
+                            <li><a class="dropdown-item" href="{{ asset('/artikel?category=pengumuman') }}">Pengumuman</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            <li><a class="dropdown-item" href="{{ asset('/artikel') }}">Lihat semua</a></li>
                         </ul>
                     </li>
                 </ul>

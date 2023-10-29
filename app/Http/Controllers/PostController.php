@@ -20,14 +20,27 @@ class PostController extends Controller
             $title = ' in ' . $category->name;
         }
         return view('index', [
-            // 'title' => 'All post ' . $title,
-            // 'active' => 'post',
-            // 'posts' => Post::all(),
-            // 'xposts' => Post::latest()->filter(request(['search', 'category']))->paginate(100)->withQueryString(),
             'posts' => Post::orderBy('created_at', 'desc')->get(),
             'visi' => VisiMisi::get()->first(),
             'sambutan' => Sambutan::get()->first(),
             'kontak' => Kontak::get()->first(),
+        ]);
+    }
+    public function blog()
+    {
+        $title = "";
+        if (request('category')) {
+            $category = Category::firstWhere('slug', request('category'));
+            $title = ' in ' . $category->name;
+        }
+        return view('blog', [
+            'posts' => Post::latest()->filter(request(['search', 'category', 'author']))->paginate(10)->withQueryString(),
+            // 'posts' => Post::orderBy('created_at', 'desc')->paginate(10),
+            'postx' => Post::orderBy('created_at', 'desc')->get(),
+            'visi' => VisiMisi::get()->first(),
+            'sambutan' => Sambutan::get()->first(),
+            'kontak' => Kontak::get()->first(),
+            'categories'=> Category::latest()->get()
         ]);
     }
     public function show(Post $post)

@@ -22,7 +22,7 @@
                         <ul>
                           @foreach ($categories as $category)
                           <li class="cat-item">
-                            <a href="#">{{ $category->name }}</a>
+                            <a href="{{ asset('/artikel?category=') }}{{ $category->name }}">{{ $category->name }}</a>
                             <span class="count mx-5"> ({{ $postx->where('category_id',$category->id)->count() }})</span>
                           </li>
                           @endforeach
@@ -37,8 +37,8 @@
                                 <img src="{{ asset('storage/'. $pos->image) }}" class="img-fluid rounded w-100 h-100" alt="...">
                                 <div class="card-body ms-2">
                                     <p class="card-text img-text-10 mb-0 lh-base text-dark two-line">{{ $pos->title }}</p>
-                                    <a href="" class="badge ">{{ $pos->category->name }}</a>
-                                    <span class="fs-8"> - {{ $post->updated_at->format('d F Y') }}</span>
+                                    <a href="{{ asset('/artikel?category=') }}{{ $pos->category->name }}" class="badge ">{{ $pos->category->name }}</a>
+                                    <span class="fs-8"> - {{ $pos->updated_at->format('d F Y') }}</span>
                                 </div>
                             </div>
                             @endforeach

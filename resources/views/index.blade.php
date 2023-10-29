@@ -1,10 +1,10 @@
 @extends('main-layouts.main')
 @section('container')
     <main>
-        <div class="container-fluids w-100 d-flex justify-content-center carousel-container">
-            <div class="rows carousel-wrap-row d-flex justify-content-center w-100">
-                <div class="col-md-12 carousel-wrap w-100">
-                    <div id="carouselExampleCaptions" class="carousel slide bg-danger" data-bs-ride="carousel">
+        <div class="container-fluids w-100 d-flex justify-content-center carousel-container ">
+            <div class="rows carousel-wrap-row d-flex justify-content-center w-100 ">
+                <div class="col-md-12 carousel-wrap w-100 ">
+                    <div id="carouselExampleCaptions" class="carousel slide bg-danger cr-width" data-bs-ride="carousel">
                         <div class="carousel-indicators">
                             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
                                 aria-current="true" aria-label="Slide 1"></button>
