@@ -20,7 +20,7 @@
                                 <div class="carousel-caption">
                                     <a class="badge" href="">{{ $posts[0]->category->name }}</a>
                                     <h5>{{ $posts[0]->title }}</h5>
-                                    <span class="card-text mb-0 fw-bold fs-8">sdKauman</span><span class="fs-8"> - 7 July 2023</span>
+                                    <span class="card-text mb-0 fw-bold fs-8">sdKauman</span><span class="fs-8"> - {{ $posts[0]->updated_at->format('d F Y') }}</span>
                                     <!-- <p>Some representative placeholder content for the first slide.</p> -->
                                 </div>
                             </div>
@@ -31,7 +31,7 @@
                                 <div class="carousel-caption">
                                     <a class="badge" href="">{{ $post->category->name }}</a>
                                     <h5>{{ $post->title }}</h5>
-                                    <span class="card-text mb-0 fw-bold fs-8">sdKauman</span><span class="fs-8"> - 7 July 2023</span>
+                                    <span class="card-text mb-0 fw-bold fs-8">sdKauman</span><span class="fs-8"> - {{ $post->updated_at->format('d F Y') }}</span>
                                     <!-- <p>Some representative placeholder content for the first slide.</p> -->
                                 </div>
                             </div>
@@ -64,7 +64,7 @@
                         </div>
                         <div class="carousel-item-text">
                             <h6 class="card-title">{{ $post->title }}</h6>
-                            <span class="card-text mb-0 fw-bold fs-8">sdnKauman</span><span class="fs-8"> - 7 July 2023</span>
+                            <span class="card-text mb-0 fw-bold fs-8">sdnKauman</span><span class="fs-8"> - {{ $post->updated_at->format('d F Y') }}</span>
                         </div>
                 </div>
                 @endforeach

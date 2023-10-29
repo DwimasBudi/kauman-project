@@ -8,7 +8,7 @@
                     <div class="post-info my-1 py-1">
                         <span class="entry-date">
                             <i class="far fa-clock"></i>
-                            September 13,2023
+                            {{ $post->updated_at->format('d F Y') }}
                         </span>
                     </div>
                     <h1>{{ $post->title }}</h1>
@@ -38,7 +38,7 @@
                                 <div class="card-body ms-2">
                                     <p class="card-text img-text-10 mb-0 lh-base text-dark two-line">{{ $pos->title }}</p>
                                     <a href="" class="badge ">{{ $pos->category->name }}</a>
-                                    <span class="fs-8"> - 7 July 2023</span>
+                                    <span class="fs-8"> - {{ $post->updated_at->format('d F Y') }}</span>
                                 </div>
                             </div>
                             @endforeach
