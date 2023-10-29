@@ -4,25 +4,25 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Primary Meta Tags -->
-    <title>Sekolah Kita</title>
-    <meta name="title" content="Sekolah Kita" />
-    <meta name="description" content="ini sekolah kita, dbs❤" />
+    <title>SD Negeri Kauman Magetan</title>
+    <meta name="title" content="SD Negeri Kauman Magetan" />
+    <meta name="description" content="SD Negeri Kauman Magetan, Sekolah Ramah Anak" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://sklh.dwimasbudi.my.id/" />
-    <meta property="og:title" content="Sekolah Kita" />
-    <meta property="og:description" content="ini sekolah kita, dbs❤" />
+    <meta property="og:title" content="SD Negeri Kauman Magetan" />
+    <meta property="og:description" content="SD Negeri Kauman Magetan, Sekolah Ramah Anak" />
     <meta property="og:image" content="https://sklh.dwimasbudi.my.id/img/2.jpg" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://sklh.dwimasbudi.my.id/" />
-    <meta property="twitter:title" content="Sekolah Kita" />
-    <meta property="twitter:description" content="ini sekolah kita, dbs❤" />
+    <meta property="twitter:title" content="SD Negeri Kauman Magetan" />
+    <meta property="twitter:description" content="SD Negeri Kauman Magetan, Sekolah Ramah Anak" />
     <meta property="twitter:image" content="https://sklh.dwimasbudi.my.id/img/2.jpg" />
 
-    <title>Sekolah Kita</title>
+    {{-- <title>SD Negeri Kauman Magetan</title> --}}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
