@@ -4,5 +4,5 @@
             <i class="uil uil-search"></i>
             <input type="text" placeholder="Search here...">
         </div> --}}
-    <img src="/img/avatar.jpg" alt="">
+    {{-- <img src="/img/1.png" alt=""> --}}
 </div>
