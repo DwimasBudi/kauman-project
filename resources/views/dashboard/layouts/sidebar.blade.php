@@ -2,7 +2,7 @@
 <nav id="navbar">
         <div class="logo-name">
             <div class="logo-image">
-                {{-- <img src="images/logo.png" alt=""> --}}
+                {{-- <img src="img/1.png" alt=""> --}}
             </div>
 
             <span class="logo_name">Kauman</span>
