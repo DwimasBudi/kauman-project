@@ -19,7 +19,7 @@
                                 <img src="{{ asset('storage/'.$posts[0]->image)  }}" class="d-block w-100 h-100" alt="...">
                                 <div class="carousel-caption">
                                     <a class="badge" href="">{{ $posts[0]->category->name }}</a>
-                                    <h5>{{ $posts[0]->title }}</h5>
+                                    <h5 style="font-size: 20px;">{{ $posts[0]->title }}</h5>
                                     <span class="card-text mb-0 fw-bold fs-8">sdKauman</span><span class="fs-8"> - {{ $posts[0]->updated_at->format('d F Y') }}</span>
                                     <!-- <p>Some representative placeholder content for the first slide.</p> -->
                                 </div>
@@ -30,7 +30,7 @@
                                 <img src="{{ asset('storage/'. $post->image) }}" class="d-block w-100 h-100" alt="...">
                                 <div class="carousel-caption">
                                     <a class="badge" href="">{{ $post->category->name }}</a>
-                                    <h5>{{ $post->title }}</h5>
+                                    <h5 style="font-size: 20px;">{{ $post->title }}</h5>
                                     <span class="card-text mb-0 fw-bold fs-8">sdKauman</span><span class="fs-8"> - {{ $post->updated_at->format('d F Y') }}</span>
                                     <!-- <p>Some representative placeholder content for the first slide.</p> -->
                                 </div>
