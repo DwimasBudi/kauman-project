@@ -2,7 +2,7 @@
 @section('container')
         <div class="dash-content">
             @if (session()->has('success'))
-            <div class="alert alert-success col-lg-10" role="alert">
+            <div class="alert alert-success col-lg-10 mt-5" role="alert">
             {{ session('success') }}
             </div>
             @endif

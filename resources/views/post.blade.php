@@ -34,7 +34,7 @@
                           @foreach ($posts->take(5) as $pos)
                             <div class="cards mb-4 d-flex justify-content-between align-items-center" style="max-width: 330px; flex-wrap: nowrap;">
                                 <a class="cover-link" href="/post/{{ $pos->slug }}"></a>
-                                <img src="{{ asset('storage/'. $pos->image) }}" class="rounded recent-img" alt="...">
+                                  <img src="{{ asset('storage/'. $pos->image) }}" class="rounded recent-img" alt="{{ $pos->title }}">
                                 <div class="card-body ms-2">
                                     <p class="card-text img-text-10 mb-0 lh-base text-dark two-line">{{ $pos->title }}</p>
                                     <a href="{{ asset('/artikel?category=') }}{{ $pos->category->name }}" class="badge ">{{ $pos->category->name }}</a>

@@ -121,6 +121,18 @@ nav .menu-items{
     text-decoration: none;
     position: relative;
 }
+.active span, .active i {
+    color: var(--primary-color) !important;
+}
+.menu-items ul.nav-links li a.active:before {
+    content: "";
+    position: absolute;
+    left: -7px;
+    height: 5px;
+    width: 5px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+}
 .nav-links li a:hover:before{
     content: "";
     position: absolute;
@@ -130,6 +142,7 @@ nav .menu-items{
     border-radius: 50%;
     background-color: var(--primary-color);
 }
+
 body.dark li a:hover:before{
     background-color: var(--text-color);
 }
@@ -272,7 +285,7 @@ nav.close ~ .dashboard .top{
     border-radius: 50%;
 }
 .dashboard .dash-content{
-    padding-top: 50px;
+    padding-top: 20px;
 }
 .dash-content .title{
     display: flex;

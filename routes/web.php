@@ -65,5 +65,5 @@ Route::get('/sitemap', function () {
     }
     $sitemap->writeToFile(public_path('sitemap.xml'));
     // return redirect('/sitemap.xml');
-    return redirect('/dashboard')->with('success', 'Sitemap Has Benn Updated');
+    return redirect('/dashboard')->with('success', 'Sitemap Has Been Updated');
 });

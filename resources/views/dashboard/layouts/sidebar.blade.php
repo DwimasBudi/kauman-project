@@ -10,7 +10,7 @@
 
         <div class="menu-items">
             <ul class="nav-links" style="padding-left:0;">
-                <li><a href="/dashboard/">
+                <li><a {{ Request::is("dashboard") ? "class=active" : "" }} href="/dashboard/">
                     <i class="uil uil-estate"></i>
                     <span class="link-name">Dahsboard</span>
                 </a></li>
@@ -18,27 +18,27 @@
                     <i class="uil uil-globe"></i>
                     <span class="link-name">Website</span>
                 </a></li>
-                <li><a href="/dashboard/posts/">
+                <li><a {{ Request::is("dashboard/posts*") ? "class=active" : "" }} href="/dashboard/posts/">
                     <i class="uil uil-files-landscapes"></i>
                     <span class="link-name">Posts</span>
                 </a></li>
-                <li><a href="/dashboard/categories/">
+                <li><a {{ Request::is("dashboard/categories*") ? "class=active" : "" }} href="/dashboard/categories/">
                     <i class="uil uil-tag-alt"></i>
                     <span class="link-name">Category</span>
                 </a></li>
-                <li><a href="/dashboard/visimisi/visi-misi/edit">
+                <li><a {{ Request::is("dashboard/visimisi*") ? "class=active" : "" }} href="/dashboard/visimisi/visi-misi/edit">
                     <i class="uil uil-bullseye"></i>
                     <span class="link-name">Visi-Misi</span>
                 </a></li>
-                <li><a href="/dashboard/sambutan/sambutan/edit">
+                <li><a {{ Request::is("dashboard/sambutan*") ? "class=active" : "" }} href="/dashboard/sambutan/sambutan/edit">
                     <i class="uil uil-megaphone"></i>
                     <span class="link-name">Sambutan</span>
                 </a></li>
-                <li><a href="/dashboard/kontak/kontak/edit">
+                <li><a {{ Request::is("dashboard/kontak*") ? "class=active" : "" }} href="/dashboard/kontak/kontak/edit">
                     <i class="uil uil-at"></i>
                     <span class="link-name">Kontak</span>
                 </a></li>
-                <li><a href="/comment">
+                <li><a {{ Request::is("comment*") ? "class=active" : "" }} href="/comment/">
                     <i class="uil uil-comments"></i>
                     <span class="link-name">Komentar</span>
                 </a></li>

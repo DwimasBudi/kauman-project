@@ -63,8 +63,9 @@ aside {
   display: flex;
   justify-content: space-between;
 }
+
 .recent-img{
   width: 250px;
-    height: 60px;
-    object-fit: cover;
+  height: 60px;
+  object-fit: cover;
 }

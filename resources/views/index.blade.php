@@ -91,7 +91,7 @@
                     </p>
                 </div>
             </div>
-            <div id="visi-misi" class="row row-main mt-5 pt-5 px-5 p-md-0">
+            <div id="visi-misi" class="row row-main mt-5 pt-5 px-5 p-md-0 flex-wrap-reverse">
                 <div class="col-lg-6 col-md-12 justfy-text">
                     <h2 style="font-weight: 600" class="text-center-md">Visi Misi</h2>
                     <h4 style="font-weight: 600" class="text-center-md">SD Negeri Kauman Magetan</h4>
