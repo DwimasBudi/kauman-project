@@ -16,7 +16,7 @@
                 <div class="col-lg-8 overflow-hidden">
                   @foreach ($posts as $post)
                   <div class="cards mt-2 card-main">
-                      <a class="cover-link" href="{{ asset('post/') }}{{ $post->slug }}" target="_blank"></a>
+                      <a class="cover-link" href="{{ asset('post') }}/{{ $post->slug }}"></a>
                           <div class="containers d-flex w-100 flex-wrap">
                               <img src="{{ asset('storage/'. $post->image) }}" class="card-img-top m-2 h-100" style="max-width: 250px;" alt="...">
                               <div class="card-body m-2" style="max-width: 370px;"> 
@@ -41,16 +41,16 @@
                           @endforeach
                         </ul>
                     </aside>
-                    <aside class="widget widget_post pb-3">
-                        <h3 class="widget-title py-3 px-4"><span>Recent Post</span></h3>
+                    <aside class="pb-3">
+                        <h3 class="py-3 px-4"><span>Recent Post</span></h3>
                         <div class="content mx-2">
-                          @foreach ($posts->take(4) as $pos)
-                            <div class="cards mb-3 d-flex justify-content-between align-items-center" style="max-width: 330px; flex-wrap: nowrap;">
-                                <a class="cover-link" href="/post/{{ $pos->slug }}" target="_blank"></a>
-                                <img src="{{ asset('storage/'. $pos->image) }}" class="img-fluid rounded w-100 h-100" alt="...">
+                          @foreach ($posts->take(5) as $pos)
+                            <div class="cards mb-4 d-flex justify-content-between align-items-center" style="max-width: 330px; flex-wrap: nowrap;">
+                                <a class="cover-link" href="/post/{{ $pos->slug }}"></a>
+                                <img src="{{ asset('storage/'. $pos->image) }}" class="rounded recent-img" alt="...">
                                 <div class="card-body ms-2">
                                     <p class="card-text img-text-10 mb-0 lh-base text-dark two-line">{{ $pos->title }}</p>
-                                    <a href="" class="badge ">{{ $pos->category->name }}</a>
+                                    <a href="{{ asset('/artikel?category=') }}{{ $pos->category->name }}" class="badge ">{{ $pos->category->name }}</a>
                                     <span class="fs-8"> - {{ $pos->updated_at->format('d F Y') }}</span>
                                 </div>
                             </div>

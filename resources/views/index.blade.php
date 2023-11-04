@@ -20,7 +20,7 @@
                                 <div class="carousel-caption">
                                     <a class="badge" href="">{{ $posts[0]->category->name }}</a>
                                     <h5 style="font-size: 20px;">{{ $posts[0]->title }}</h5>
-                                    <span class="card-text mb-0 fw-bold fs-8">sdKauman</span><span class="fs-8"> - {{ $posts[0]->updated_at->format('d F Y') }}</span>
+                                    <span class="card-text mb-0 fw-bold fs-8">SDNKauman</span><span class="fs-8"> - {{ $posts[0]->updated_at->format('d F Y') }}</span>
                                     <!-- <p>Some representative placeholder content for the first slide.</p> -->
                                 </div>
                             </div>
@@ -31,7 +31,7 @@
                                 <div class="carousel-caption">
                                     <a class="badge" href="">{{ $post->category->name }}</a>
                                     <h5 style="font-size: 20px;">{{ $post->title }}</h5>
-                                    <span class="card-text mb-0 fw-bold fs-8">sdKauman</span><span class="fs-8"> - {{ $post->updated_at->format('d F Y') }}</span>
+                                    <span class="card-text mb-0 fw-bold fs-8">SDNKauman</span><span class="fs-8"> - {{ $post->updated_at->format('d F Y') }}</span>
                                     <!-- <p>Some representative placeholder content for the first slide.</p> -->
                                 </div>
                             </div>
@@ -53,7 +53,7 @@
         </div>
         <div class="continer-fluid d-flex justify-content-center mt-3 flex-wrap px-5">
             <div class="container mx-0 px-0">
-                <h3>Artikel</h3>
+                {{-- <h3>Artikel</h3> --}}
             </div>
             <div class="owl-carousel owl-theme">
                 @foreach ($posts->skip(3)->take(6) as $post)
@@ -64,58 +64,58 @@
                         </div>
                         <div class="carousel-item-text">
                             <h6 class="card-title">{{ $post->title }}</h6>
-                            <span class="card-text mb-0 fw-bold fs-8">sdnKauman</span><span class="fs-8"> - {{ $post->updated_at->format('d F Y') }}</span>
+                            <span class="card-text mb-0 fw-bold fs-8">SDNKauman</span><span class="fs-8"> - {{ $post->updated_at->format('d F Y') }}</span>
                         </div>
                 </div>
                 @endforeach
             </div>
         </div> 
-        <div class="container-fluid mt-3 px-0 mx-0">  
+        {{-- <div class="container-fluid mt-3 px-0 mx-0">  
                 <div class="motivasi">
                     <div class="item text-center">
                         <blockquote>Jangan berhenti belajar, belajarlah walaupun itu hanya membaca kesimpulan buku paketmu.</blockquote>
                         <cite>Dwimas Sang Guru</cite>
                     </div>
             </div>
-        </div>
+        </div> --}}
         <div class="container-fluid my-5 px-5">
-            <div class="row">
-                <div class="col-md-6 d-flex justify-content-center align-items-center">
-                    <img src="{{ asset('storage/'. $sambutan->image) }}" alt="" style="border-radius: 50px; height: 400px; max-width:450px; object-fit:cover;">
+            <div class="row row-main">
+                <div class="col-lg-6 col-md-12 d-flex justify-content-center align-items-center">
+                    <img class="main-img" src="{{ asset('storage/'. $sambutan->image) }}" alt="">
                 </div>
-                <div class="col-md-6 justfy-text text-center">
-                    <h4>Sambuatan Kepala Sekolah</h4>
-                    <h6>SD Negeri Kauman Magetan</h6>
+                <div class="col-lg-6 col-md-12 justfy-text text-center">
+                    <h4 style="font-weight: 600">Sambuatan Kepala Sekolah</h4>
+                    <h6 style="font-weight: 600">SD Negeri Kauman Magetan</h6>
                     <p class="text-justify" style="text-align: justify;">
                         {{ strip_tags($sambutan->sambutan) }}
                     </p>
                 </div>
             </div>
-            <div id="visi-misi" class="row mt-5 pt-5 px-5 p-md-0">
-                <div class="col-md-6 justfy-text">
-                    <h2 class="text-center-md">Visi Misi</h2>
-                    <h6 class="text-center-md">SD Negeri Kauman Magetan</h6>
+            <div id="visi-misi" class="row row-main mt-5 pt-5 px-5 p-md-0">
+                <div class="col-lg-6 col-md-12 justfy-text">
+                    <h2 style="font-weight: 600" class="text-center-md">Visi Misi</h2>
+                    <h4 style="font-weight: 600" class="text-center-md">SD Negeri Kauman Magetan</h4>
                     <h6>Visi : {{ strip_tags($visi->visi) }}</h6>
                     <h6>Misi :</h6>
                     {!! $visi->misi !!}
                 </div>
-                <div class="col-md-6 d-flex justify-content-center align-items-center">
-                    <img src="{{ asset('storage/'. $visi->image) }}" alt="" style="border-radius: 50px; height: 400px; max-width:450px; object-fit:cover;">
+                <div class="col-lg-6 md-12 d-flex justify-content-center align-items-center">
+                    <img class="main-img" src="{{ asset('storage/'. $visi->image) }}" alt="">
                 </div>
             </div>
         </div>
         <div id="contact" class="container-fluids overflow-hidden">
-    <div class="contact-info-area bg-gray default-padding">
+    <div class="contact-info-area d-flex justify-content-center">
         <div class="container mx-5 px-5 p-md-0 m-md-0">
             <div class="row">
                 <div class="site-heading text-center">
-                    <div class="col-lg-12 text-center">
+                    <div class="col-lg-12  text-center">
                         <h2>Hubungi Kami</h2>
                     </div>
                 </div>
             </div>
             <div class="row mt-3 g-0 ">
-                <div class="row maps-form">
+                <div class="row">
                     <div class="col-lg-6 maps text-center">
                         <h3 class="text-center">Denah Lokasi</h3>
                         <div class="google-maps text-center-md">
@@ -123,24 +123,24 @@
                         </div>
                     </div>
                     <div class="col-lg-6 form">
-                        <div class="heading f-item address">
+                        <div class="kontak">
                             <h3 class="text-center">Kontak</h3>
                             <ul id="list">
                                 <li>
-                                    <i class="uil uil-envelopes"></i><p>Email <br><span><a href="mailto:sdnegerikauman@gmail.com" style="text-decoration: none;">{{ $kontak->email }}</a></span></p>
+                                    <i class="uil uil-envelopes"></i><p>Email <br><span><a href="mailto:{{ $kontak->email }}" style="text-decoration: none;">{{ $kontak->email }}</a></span></p>
                                 </li>
                                 <li>
                                     <i class="uil uil-sign-right"></i>
-                                    <p>Address <br><span>{{ $kontak->alamat }}</span></p>
+                                    <p>Alamat <br><span>{{ $kontak->alamat }}</span></p>
                                 </li>
                                 <li>
                                     <i class="uil uil-phone-volume"></i>
-                                    <p>Phone <br><span>{{ $kontak->hp }}</span></p>
+                                    <p>Telephone <br><span>{{ $kontak->hp }}</span></p>
                                 </li>
-                                <li>
+                                {{-- <li>
                                     <i class="uil uil-print"></i>
                                     <p>Fax <br><span>{{ $kontak->fax }}</span></p>
-                                </li>
+                                </li> --}}
                             </ul>
                         </div>
                         

@@ -1,6 +1,7 @@
-.article img {
-  max-width: 100%;
+img.thumbnail{
+  width: 100%;
   height: auto;
+  object-fit: cover;
 }
 
 main h1 {
@@ -13,7 +14,7 @@ main h1 {
 
 main p {
   font-size: 16px;
-  color: #757783;
+  /* color: #757783; */
   line-height: 28.8px;
 }
 
@@ -61,4 +62,9 @@ aside {
 .cat-item {
   display: flex;
   justify-content: space-between;
+}
+.recent-img{
+  width: 250px;
+    height: 60px;
+    object-fit: cover;
 }

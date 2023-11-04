@@ -13,6 +13,7 @@ body {
     /* background-size: cover; */
     background-repeat: repeat;
     background-attachment: fixed;
+    scroll-behavior: smooth;
 }
 .two-line{
     overflow: hidden;
@@ -144,9 +145,9 @@ header {
     overflow: hidden;
 }
 
-.content .cards img {
+/* .content .cards img {
     width: 100px !important;
-}
+} */
 
 .cards img {
     filter: brightness(85%);
@@ -412,6 +413,13 @@ cite {
 
 ol li{
     font-size: 16px;
-        color: #757783;
+        /* color: #757783; */
         line-height: 28.8px;
+}
+
+.main-img{
+    border-radius: 50px;
+        height: 400px;
+        max-width: 450px;
+        object-fit: cover;
 }
