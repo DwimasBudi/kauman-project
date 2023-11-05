@@ -50,49 +50,132 @@
 
         <div class="container">
           <section>
-            <div class="my-3 py-3">
-            <h4>Komentar :</h4>
+            <div id="comment" class="my-3 py-3">
+            {{-- <h4>Komentar :</h4> --}}
+
               <div class="row d-flex justify-content-start py-3 my-3">
+              
                 <div class="col-md-12 col-lg-10 col-xl-8">
+                  @if (session()->has('success'))
+                    <div class="alert alert-primary alert-dismissible fade show" role="alert">
+                      {{ session('success') }}
+                      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                  @endif
+                  @if (Cookie::has('CommentLimit'))
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                      {{ Cookie::get('CommentLimit') }}
+                      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                  @endif
                   <div class="card">
+                    <h4 class="text-center m-3 pb-1">Recent Comments</h4>
+                    
                     @foreach ($comments as $comment)
+                    <div class="card-body p-4">
+                      <div class="row">
+                        <div class="col">
+                          <div class="d-flex flex-start">
+                            @if ($comment->email=="admin@kauman.sch.id")
+                            <img class="rounded-circle shadow-1-strong me-3" src="{{ asset('img/avatar.jpg') }}" alt="avatar" width="65" height="65" />
+                            @else
+                            <img class="rounded-circle shadow-1-strong me-3" src="{{ asset('img/avatar.jpg') }}" alt="avatar" width="65" height="65" />
+                            @endif
+                            <div class="flex-grow-1 flex-shrink-1 comment">
+                              <div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                  <p class="mb-1">
+                                      @if ($comment->email=="admin@kauman.sch.id") 
+                                        <span class="text-primary"> {{ $comment->username }} (Admin) <i class="bi bi-patch-check"></i></span>
+                                      @else
+                                      {{ $comment->username }}
+                                      @endif <span class="small">- {{ $comment->created_at->diffForHumans() }}</span>
+                                  </p>
+                                  <span class="reply" data-id="{{ $comment->id }}"><i class="bi bi-reply"></i><span class="small"> reply</span></span>
+                                </div>
+                                <p class="small mb-0">
+                                  {{ $comment->comment }}
+                                </p>
+                              </div>
+                              {{-- <div class="d-flex flex-start mt-4">
+                                <a class="me-3" href="#">
+                                  <img class="rounded-circle shadow-1-strong"
+                                    src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(11).webp" alt="avatar"
+                                    width="65" height="65" />
+                                </a>
+                                <div class="flex-grow-1 flex-shrink-1">
+                                  <div>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                      <p class="mb-1">
+                                        Simona Disa <span class="small">- 3 hours ago</span>
+                                      </p>
+                                    </div>
+                                    <p class="small mb-0">
+                                      letters, as opposed to using 'Content here, content here',
+                                      making it look like readable English.
+                                    </p>
+                                  </div>
+                                </div>
+                              </div> --}}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    @endforeach
+                    {{-- @foreach ($comments as $comment)
                     <div class="card-body">
                       <div class="d-flex flex-start align-items-center">
                         <img class="rounded-circle shadow-1-strong me-3"
                           src="{{ asset('img/1.png') }}" alt="avatar" width="60" height="60" />
                         <div>
-                          <h6 class="fw-bold text-primary mb-1">{{ $comment->username }}</h6>
+                          <h6 class="fw-bold text-primary m-0">{{ $comment->username }}</h6>
                           <p class="text-muted small mb-0">
                            {{ $comment->created_at->format('d-m-Y') }}
                           </p>
                         </div>
                       </div>
-                      <p class="mt-1 mb-1 pb-1">
+                      <p class="m-0">
                        {{ $comment->comment }}
-                      </p>        
+                      </p>
+                       <div class="small d-flex justify-content-start">
+                        <a href="#!" class="d-flex align-items-center me-3">
+                          <i class="far fa-thumbs-up me-2"></i>
+                          <p class="mb-0">Reply</p>
+                        </a>
+                      </div> 
                     </div>
-                    @endforeach
+                    <hr>
+                    @endforeach --}}
                     <div class="text-center d-flex justify-content-center">{{ $comments->links() }}</div>
                     <div class="card-footer py-3 border-0" style="background-color: #f8f9fa;">
+                      @if (Auth::check())
+                      <form action="/dashboard/comment" method="post">
+                      @else
                       <form action="/comment" method="post">
-                        @csrf
+                      @endif
+                      @csrf
                         <h5>Tambah Komentar :</h5>
                         <div class="d-flex flex-start w-100">
                           <img class="rounded-circle shadow-1-strong me-3"
-                            src="{{ asset('img/1.png') }}" alt="avatar" width="40" height="40" />
+                            src="{{ asset('img/avatar.jpg') }}" alt="avatar" width="40" height="40" />
                           <div class="form-outline w-100">
                             <div class="input-group mb-3">
                               <input name="post_id" type="hidden" value="{{ $post->id }}">
-                              <input name="username" type="text" class="form-control" placeholder="Username" aria-label="Username" required>
-  
-                              <input name="email" type="email" class="form-control mx-3" placeholder="email" aria-label="email" required>
+                              <input name="username" type="text" class="form-control" placeholder="Username" aria-label="Username" required @if (Cookie::has('CommentLimit')) disabled @endif @if (Auth::check()) value="SDNKauman" readonly @endif >
+                              @if (Auth::check())
+                              <input name="email" type="email" class="form-control mx-3" placeholder="email" aria-label="email" required @if (Cookie::has('CommentLimit')) disabled @endif value="admin@kauman.sch.id">
+                              @endif
+                              @if (!Auth::check())
+                              <input name="email" type="email" class="form-control mx-3" placeholder="email" aria-label="email" required @if (Cookie::has('CommentLimit')) disabled @endif>
+                              @endif
                             </div>
-                            <textarea name="comment" class="form-control" id="textAreaExample" rows="4" style="background: #fff;" required></textarea>
-                            <label class="form-label" for="textAreaExample">Message</label>
+                            {{-- <label class="form-label" for="textAreaExample">Message</label> --}}
+                            <textarea placeholder="Pesan" name="comment" class="form-control" id="textAreaExample" rows="4" style="background: #fff;" required @if (Cookie::has('CommentLimit')) disabled @endif ></textarea>
                           </div>
                         </div>
                         <div class="float-end mt-2 pt-1">
-                          <button type="submit" class="btn btn-primary btn-sm">Post comment</button>
+                          <button type="submit" class="btn btn-primary btn-sm" @if (Cookie::has('CommentLimit')) disabled @endif >Post comment</button>
                         </div>
                       </form>
                     </div>
@@ -103,4 +186,51 @@
           </section>
         </div>
     </main>
+    <script>
+$(document).ready(function() {
+    $('.reply').on('click', function() {
+        var $this = $(this);
+        
+        if (!$this.hasClass('disabled')) {
+            // Buat elemen input
+            var dataId = $this.data('id');
+            console.log(dataId);
+            var inputElement = `
+                <div class="card-footer py-3 border-0" style="background-color: #f8f9fa;">
+                    <h5>Reply : </h5>
+                    <div class="d-flex flex-start w-100 my-2">
+                        <img class="rounded-circle shadow-1-strong me-3" src="{{ asset('img/avatar.jpg') }}" alt="avatar" width="40" height="40" />
+                        <div class="form-outline w-100">
+                            <div class="input-group mb-3">
+                                <input name="comment_id" type="hidden" value="${dataId}">
+                                <input name="username" type="text" class="form-control" placeholder="Username" aria-label="Username" required @if (Cookie::has('CommentLimit')) disabled @endif @if (Auth::check()) value="SDNKauman" readonly @endif>
+                                @if (Auth::check())
+                                <input name="email" type="email" class="form-control mx-3" placeholder="email" aria-label="email" required @if (Cookie::has('CommentLimit')) disabled @endif value="admin@kauman.sch.id">
+                                @endif
+                                @if (!Auth::check())
+                                <input name="email" type="email" class="form-control mx-3" placeholder="email" aria-label="email" required @if (Cookie::has('CommentLimit')) disabled @endif>
+                                @endif
+                            </div>
+                            <textarea placeholder="Pesan" name="comment" class="form-control" id="textAreaExample" rows="4" style="background: #fff;" required @if (Cookie::has('CommentLimit')) disabled @endif></textarea>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            // Sisipkan elemen input setelah div comment
+            $this.closest('.comment').append(inputElement);
+
+            // Nonaktifkan tombol "Reply"
+            $this.addClass('disabled');
+        } else {
+            // If "Reply" button is already disabled, remove the inputElement
+            $this.closest('.comment').find('.card-footer').remove();
+            
+            // Re-enable the "Reply" button
+            $this.removeClass('disabled');
+        }
+    });
+});
+
+    </script>
 @endsection

@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Comment;
 use App\Models\Post;
+use App\Models\Comment;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CommentController extends Controller
 {
@@ -13,6 +14,10 @@ class CommentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth', ['except' => ['store',]]);
+    }
     public function index()
     {
         // $comment = Comment::latest()->get();
@@ -50,7 +55,8 @@ class CommentController extends Controller
 
         ]);
         Comment::create($validatedData);
-        return back();
+        // return back();
+        return redirect()->to(app('url')->previous() . "#comment")->with('success', 'Comment Has Ben Added');
     }
 
     /**
@@ -96,6 +102,6 @@ class CommentController extends Controller
     public function destroy(Comment $comment)
     {
         Comment::destroy($comment->id);
-        return redirect('/comment')->with('success', 'Comment Has Ben Deleted');
+        return redirect('/dashboard/comment')->with('success', 'Comment Has Ben Deleted');
     }
 }

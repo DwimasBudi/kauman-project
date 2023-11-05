@@ -1,21 +1,22 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CategoryDashboardController;
+use App\Models\Post;
+use Spatie\Sitemap\Sitemap;
 // use App\Http\Controllers\CategoryController;
+use Illuminate\Http\Request;
+use Spatie\Sitemap\Tags\Url;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\LoginController;
-use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\DashboardPostController;
-use App\Http\Controllers\SambutanController;
-use App\Http\Controllers\VisiDashboardController;
 use App\Http\Controllers\KontakController;
 use App\Http\Controllers\CommentController;
 
-use Illuminate\Http\Request;
-use Spatie\Sitemap\Sitemap;
-use Spatie\Sitemap\Tags\Url;
-use App\Models\Post;
+use App\Http\Controllers\SambutanController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DashboardPostController;
+use App\Http\Controllers\VisiDashboardController;
+use App\Http\Controllers\CategoryDashboardController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,13 +32,18 @@ Route::get('/', [PostController::class, 'index']);
 Route::get('/post/{post:slug}', [PostController::class, 'show']);
 Route::get('/artikel', [PostController::class, 'blog']);
 Route::get('/admin', [LoginController::class, 'index'])->name('login')->middleware('guest');
-Route::post('/login', [LoginController::class, 'authenticate'])->middleware('throttle:loginx');
+Route::post('/login', [LoginController::class, 'authenticate'])->middleware('throttle:loginc');
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
 Route::get('/logout', [LoginController::class, 'logout']);
 Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('auth');
 Route::resource('/dashboard/categories', CategoryDashboardController::class)->middleware('auth');
-Route::resource('/comment', CommentController::class);
-// Route::post('/comment', [CommentController::class, 'store']);
+
+Route::resource('/dashboard/comment', CommentController::class)->middleware('auth');
+Route::post('/comment', [CommentController::class, 'store'])->middleware('throttle:comment');
+
+
+
+
 // Route::resource('/dashboard/categories', CategoryController::class)->middleware('auth');
 // Route::get('/dashboard/categories/{category:slug}/edit', [CategoryDashboardController::class, 'edit']);
 

@@ -39,7 +39,7 @@
               <td>{{ $comment->comment}}</td>
               <td>
                 <a href="{{ asset('post') }}/{{$posts->firstWhere('id',$comment->post_id)->slug }}" class="badge text-bg-primary" target="_blank"><i class="uil uil-eye"></i></a>
-                <form action="/comment/{{ $comment->id }}" method="post" class="d-inline">
+                <form action="/dashboard/comment/{{ $comment->id }}" method="post" class="d-inline">
                   @method('delete')
                   @csrf
                   <button class="badge bg-danger border-0" onclick="return confirm('Are you sure?')"><i class="uil uil-times-circle"></i></button>

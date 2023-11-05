@@ -70,5 +70,17 @@ class RouteServiceProvider extends ServiceProvider
                 return back()->with('loginLimit', 'Terlau Banyak percobaan!, Tunggu 1 Menit !');
             });
         });
+        RateLimiter::for('loginc', function (Request $request) {
+            return Limit::perMinute(3)->by($request->ip())->response(function () {
+                $message = 'Terlau Banyak percobaan!, Tunggu 1 Menit !';
+                return back()->withCookie(cookie('loginLimit', $message, 1));
+            });
+        });
+        RateLimiter::for('comment', function (Request $request) {
+            return Limit::perMinute(5)->by($request->ip())->response(function () {
+                $message = 'Jangan Spam Commentar! Tunggu 1 Menit !';
+                return redirect()->to(app('url')->previous() . "#comment")->withCookie(cookie('CommentLimit', $message, 1));
+            });
+        });
     }
 }

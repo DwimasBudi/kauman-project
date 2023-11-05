@@ -11,17 +11,17 @@
   <link rel="stylesheet" href="css/login-style.css">
 </head>
 <body>
-  <div class="container-fluid col-4 mt-2">
+  <div class="container-fluid col-4 mt-2" style="z-index: 9999;">
     @if (session()->has('success'))
-    <div class="alert alert-success alert-dismissible fade show" role="alert">
+    <div class="alert alert-success alert-dismissible fade show" role="alert" style="z-index: 9999;">
       {{ session('success') }}
       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
     @endif
-    @if (session()->has('loginError') || session()->has('loginLimit'))
-    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+    @if (session()->has('loginError') || Cookie::has('loginLimit'))
+    <div class="alert alert-danger alert-dismissible fade show" role="alert" style="z-index: 9999;">
       {{ session('loginError') }} 
-      {{ session('loginLimit') }} 
+      {{ Cookie::get('loginLimit') }} 
       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
     @endif
@@ -36,13 +36,13 @@
       
       <form action="login" method="POST">
         @csrf
-        <input type="text" name="username" placeholder="username" @if (session()->has('loginLimit'))
+        <input type="text" name="username" placeholder="username" @if (Cookie::has('loginLimit'))
         disabled
-        @endif >
-        <input type="password" name="password" placeholder="password" @if (session()->has('loginLimit'))
+        @endif required>
+        <input type="password" name="password" placeholder="password" @if (Cookie::has('loginLimit'))
         disabled
-        @endif >
-        <input type="submit" class="button" value="Login">
+        @endif required>
+        <input type="submit" class="button bg-primary" value="Login">
       </form>
     </div>
   </div>

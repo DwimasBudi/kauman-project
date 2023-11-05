@@ -49,7 +49,7 @@ class PostController extends Controller
             'postx' => Post::orderBy('id', 'desc')->get(),
             'post' => $post,
             'categories'=> Category::latest()->get(),
-            'comments' => Comment::where('post_id', $post->id)->paginate(3)
+            'comments' => Comment::where('post_id', $post->id)->paginate(10)
 
         ]);
     }

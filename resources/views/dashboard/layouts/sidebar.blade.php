@@ -38,7 +38,7 @@
                     <i class="uil uil-at"></i>
                     <span class="link-name">Kontak</span>
                 </a></li>
-                <li><a {{ Request::is("comment*") ? "class=active" : "" }} href="/comment/">
+                <li><a {{ Request::is("dashboard/comment*") ? "class=active" : "" }} href="/dashboard/comment/">
                     <i class="uil uil-comments"></i>
                     <span class="link-name">Komentar</span>
                 </a></li>
