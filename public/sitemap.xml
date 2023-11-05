@@ -6,16 +6,6 @@
         <priority>0.8</priority>
             </url>
     <url>
-        <loc>http://sd-kauman.local/post/pembentukan-karakter-nilai-nilai-etika-di-sd-negeri-kauman-magetan</loc>
-            <changefreq>daily</changefreq>
-        <priority>0.8</priority>
-            </url>
-    <url>
-        <loc>http://sd-kauman.local/post/sekilas-tentang-sd-negeri-kauman-magetan-sejarah-visi-dan-misi</loc>
-            <changefreq>daily</changefreq>
-        <priority>0.8</priority>
-            </url>
-    <url>
         <loc>http://sd-kauman.local/post/cerdas-cermat-mengembangkan-kemampuan-anak-sd-kelas-1-3</loc>
             <changefreq>daily</changefreq>
         <priority>0.8</priority>
@@ -52,6 +42,16 @@
             </url>
     <url>
         <loc>http://sd-kauman.local/post/ananda-mahfudz-meraih-juara-1-dalam-o2sn-cabor-kids-athletic-putra-kabupaten-magetan</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>http://sd-kauman.local/post/pembentukan-karakter-nilai-nilai-etika-di-sd-negeri-kauman-magetan</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>http://sd-kauman.local/post/sekilas-tentang-sd-negeri-kauman-magetan-sejarah-visi-dan-misi</loc>
             <changefreq>daily</changefreq>
         <priority>0.8</priority>
             </url>

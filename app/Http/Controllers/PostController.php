@@ -15,7 +15,7 @@ class PostController extends Controller
     public function index()
     {
         return view('index', [
-            'posts' => Post::orderBy('created_at', 'desc')->get(),
+            'posts' => Post::orderBy('id', 'asc')->get(),
             'visi' => VisiMisi::get()->first(),
             'sambutan' => Sambutan::get()->first(),
             'kontak' => Kontak::get()->first(),
@@ -45,8 +45,8 @@ class PostController extends Controller
         // return dd($post->id);
         return view('post', [
             'title' => $post->title,
-            'posts' => Post::orderBy('created_at', 'desc')->get(),
-            'postx' => Post::orderBy('created_at', 'desc')->get(),
+            'posts' => Post::orderBy('id', 'desc')->get(),
+            'postx' => Post::orderBy('id', 'desc')->get(),
             'post' => $post,
             'categories'=> Category::latest()->get(),
             'comments' => Comment::where('post_id', $post->id)->paginate(3)

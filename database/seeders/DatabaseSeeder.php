@@ -22,13 +22,13 @@ class DatabaseSeeder extends Seeder
         User::create([
             'name' => 'Dwimas Budi Sulistyo',
             'username' => 'dwimasbudi',
-            'email' => 'dwimasbudi@gmail.com',
+            // 'email' => 'dwimasbudi@gmail.com',
             'password' => bcrypt('password')
         ]);
         User::create([
             'name' => 'Wisnu Aryo Putro',
             'username' => 'admin',
-            'email' => 'wisnuaryo@gmail.com',
+            // 'email' => 'wisnuaryo@gmail.com',
             'password' => bcrypt('admin')
         ]);
         Category::create([
@@ -67,7 +67,7 @@ class DatabaseSeeder extends Seeder
         Sambutan::create([
             'slug' => 'sambutan',
             'sambutan' => 'Assalamualaikum warahmatullahi wabarakaatuh Alhamdulillahirobbil aalamiin. Kita panjatkan puji syukur ke hadirat Allah SWT Tuhan Yang Maha Kuasa atas limpahan rahmat dan karunia-Nya yang selalu diberikan kepada kita semua. Selamat datang di website SD Negeri Kauman Magetan, media informasi sekolah yang dapat diakses dengan mudah oleh siswa, orang tua/wali, alumni dan stake holder secara luas . Pendidikan sebagai kunci kemajuan dan keunggulan bangsa, sekolah memiliki tanggung jawab menyiapkan sumber daya manusia yang tangguh, adaptif terhadap perubahan yang begitu cepat. SD Negeri Kauman Magetan melaksanakan proses pendidikan untuk membekali dan mengantarkan lulusannya berprestasi unggul, mampu bersaing di tingkat global, berbudaya, peduli lingkungan, berwawasan Ilmu',
-            'image' => 'post-images/presiden.png'
+            'image' => 'post-images/xXeTjIG8X4xS2pZK46fZ9PWXtKHvZBbNaNDJRdWq.jpg'
         ]);
         // Post::factory(100)->create();
         // Comment::factory(500)->create();
@@ -84,48 +84,7 @@ class DatabaseSeeder extends Seeder
 <p style="text-align: justify;">Guru dan staf sekolah dasar negeri adalah tim yang bekerja sama untuk mencapai kesuksesan pendidikan. Mereka saling mendukung dan bekerja sama dalam menciptakan lingkungan belajar yang kondusif dan menyenangkan. Guru dan staf sekolah juga berkomunikasi dengan orang tua siswa-siswi untuk memastikan bahwa pendidikan yang diberikan sesuai dengan kebutuhan dan harapan mereka.</p>
 <p style="text-align: justify;">Kesuksesan pendidikan tidak dapat tercapai tanpa peran aktif dan dedikasi dari guru dan staf sekolah dasar negeri. Mereka adalah pilar utama dalam menciptakan generasi muda yang cerdas, berintegritas, dan siap menghadapi tantangan masa depan. Oleh karena itu, perlu diapresiasi dan dihargai upaya mereka dalam menciptakan kesuksesan pendidikan di Indonesia.</p>',
         ]);
-        Post::create([
-            'category_id' => 1,
-            'title' => 'Pembentukan Karakter: Nilai-nilai Etika di SD Negeri Kauman Magetan',
-            'slug' => 'pembentukan-karakter-nilai-nilai-etika-di-sd-negeri-kauman-magetan',
-            'image' => 'post-images/lyZGsUkQJlmkuVwTKxguTsCylH1HehzZeYtO9fFm.webp',
-            'excerpt' => 'Pembentukan karakter adalah salah satu aspek penting dalam pendidikan anak-anak di sekolah. SD Neger...',
-            'body' => '<p>Pembentukan karakter adalah salah satu aspek penting dalam pendidikan anak-anak di sekolah. SD Negeri Kauman Magetan merupakan salah satu sekolah yang memiliki komitmen kuat dalam membentuk karakter siswa melalui penerapan nilai-nilai etika. Nilai-nilai etika ini menjadi dasar dalam membentuk pribadi yang baik, bertanggung jawab, dan memiliki integritas tinggi.</p>
-<p>Salah satu nilai etika yang diterapkan di SD Negeri Kauman Magetan adalah kejujuran. Kejujuran diajarkan kepada siswa sebagai prinsip dasar dalam berinteraksi dengan orang lain. Siswa diajarkan untuk selalu berkata jujur, mengakui kesalahan, dan tidak melakukan tindakan curang. Dengan mengajarkan nilai kejujuran, sekolah ini berharap siswa dapat menjadi individu yang dapat dipercaya dan memiliki integritas tinggi.Selain kejujuran, nilai etika lain yang ditekankan di SD Negeri Kauman Magetan adalah disiplin. Siswa diajarkan untuk memiliki kedisiplinan dalam menjalankan tugas-tugas sekolah, mengikuti aturan, dan menghormati waktu. </p>
-<p>Dengan mengajarkan nilai disiplin, sekolah ini berharap siswa dapat menjadi individu yang bertanggung jawab dan memiliki kemampuan untuk mengatur diri sendiri.Selanjutnya, nilai etika yang juga ditekankan di SD Negeri Kauman Magetan adalah kerjasama. Siswa diajarkan untuk bekerja sama dalam kelompok, saling membantu, dan menghargai kontribusi setiap individu. Melalui pembelajaran kerjasama, sekolah ini berharap siswa dapat menjadi individu yang mampu bekerja dalam tim, menghargai perbedaan, dan memiliki sikap empati terhadap orang lain.Selain itu, nilai etika yang ditekankan di SD Negeri Kauman Magetan adalah tanggung jawab.</p>
-<p>Siswa diajarkan untuk bertanggung jawab terhadap tugas-tugas sekolah, lingkungan, dan diri sendiri. Dengan mengajarkan nilai tanggung jawab, sekolah ini berharap siswa dapat menjadi individu yang dapat diandalkan, memiliki rasa memiliki terhadap tugas-tugasnya, dan mampu mengambil keputusan yang baik.Penerapan nilai-nilai etika di SD Negeri Kauman Magetan tidak hanya dilakukan melalui pembelajaran di kelas, tetapi juga melalui kegiatan ekstrakurikuler, seperti kegiatan sosial, kegiatan lingkungan, dan kegiatan keagamaan. Melalui kegiatan-kegiatan ini, siswa diajarkan untuk mengaplikasikan nilai-nilai etika dalam kehidupan sehari-hari.Dengan adanya penerapan nilai-nilai etika di SD Negeri Kauman Magetan, diharapkan siswa dapat tumbuh menjadi individu yang memiliki karakter yang baik, bertanggung jawab, dan memiliki integritas tinggi. Pembentukan karakter yang baik ini akan membantu siswa dalam menghadapi tantangan di masa depan dan menjadi individu yang berkontribusi positif bagi masyarakat.</p>',
-        ]);
-        Post::create([
-            'category_id' => 1,
-            'title' => 'Sekilas Tentang SD Negeri Kauman Magetan : Sejarah, Visi, dan Misi',
-            'slug' => 'sekilas-tentang-sd-negeri-kauman-magetan-sejarah-visi-dan-misi',
-            'image' => 'post-images/gJr5FfpU6kMSRRvvKx6VRmppXVcviKt2TJVV98y4.webp',
-            'excerpt' => 'Visi: Terwujudnya Sekolah Dalam Prestasi Berdasarkan Iman dan Takwa\r\nVisi kami, \"Terwujudnya Sekolah...',
-            'body' => '<p style="text-align: justify;"><strong>Visi: Terwujudnya Sekolah Dalam Prestasi Berdasarkan Iman dan Takwa</strong></p>
-<p style="text-align: justify;">Visi kami, "Terwujudnya Sekolah Dalam Prestasi Berdasarkan Iman dan Takwa," menjadi sumber inspirasi dan arah perjalanan kami. Kami percaya bahwa keberhasilan sejati tidak hanya terletak pada pencapaian akademik, tetapi juga pada pembentukan karakter yang kokoh berlandaskan iman dan takwa.</p>
-<p style="text-align: justify;"><strong>Misi Sekolah Dasar Negeri Kami</strong></p>
-<ol style="text-align: justify;">
-<li>
-<p><strong>Meningkatkan dan menguatkan Iman dan Taqwa</strong>: Kami berkomitmen untuk mengembangkan nilai-nilai iman dan takwa di antara siswa kami melalui pendidikan agama, pembinaan karakter, dan praktik-praktik yang mempromosikan moralitas dan etika yang baik.</p>
-</li>
-<li>
-<p><strong>Meningkatkan Kualitas Sumber Daya Manusia</strong>: Kami percaya bahwa sumber daya manusia adalah aset berharga dalam pencapaian visi kami. Melalui pelatihan dan pengembangan berkelanjutan, kami berusaha untuk memiliki staf pendidik dan karyawan yang terampil dan berkualitas.</p>
-</li>
-<li>
-<p><strong>Unggul Dalam Bidang Akademik dan Non-Akademik</strong>: Sekolah kami berupaya untuk mencapai prestasi tinggi dalam berbagai aspek pendidikan, termasuk akademik dan non-akademik. Kami mendorong siswa kami untuk mengejar pengetahuan dan keterampilan yang holistik.</p>
-</li>
-<li>
-<p><strong>Membentuk kerjasama yang menguasai ilmu pengetahuan, teknologi, dan seni serta kacakapan hidup</strong>: Kami mempersiapkan siswa kami dengan pengetahuan yang komprehensif, teknologi, seni, dan keterampilan hidup yang akan membantu mereka sukses dalam dunia yang terus berubah.</p>
-</li>
-<li>
-<p><strong>Melaksanakan Pembelajaran Bernuansa PAKEM</strong>: Pembelajaran di sekolah kami diarahkan dengan metode PAKEM (Pendekatan, Aktivitas, Komunikasi, Evaluasi, dan Media), yang mempromosikan pembelajaran yang efektif, interaktif, dan menyenangkan.</p>
-</li>
-<li>
-<p><strong>Menjalin kerjasama yang harmonis antara warga sekolah, komite, dan lingkungan</strong>: Kami menghargai kerjasama yang erat antara semua pihak terkait dengan sekolah. Dalam semangat harmoni, kami bekerja bersama untuk mencapai visi dan misi kami.</p>
-</li>
-</ol>
-<p style="text-align: justify;">Sekolah Dasar Negeri Kauman berkomitmen untuk terus mewujudkan visi dan misi ini dalam praktik sehari-hari, menciptakan lingkungan pendidikan yang mempromosikan prestasi akademik dan moralitas, serta mempersiapkan siswa untuk menjadi pemimpin masa depan yang berintegritas dan sukses. Dengan pendekatan yang kokoh dan tujuan yang jelas, kami siap menghadapi masa depan dengan keyakinan dan harapan.</p>',
-        ]);
+        
         Post::create([
             'category_id' => 1,
             'title' => 'Cerdas Cermat: Mengembangkan Kemampuan Anak SD Kelas 1-3',
@@ -271,6 +230,48 @@ class DatabaseSeeder extends Seeder
 <p class="MsoNormal" style="text-align: justify;">Prestasi Ananda Mahfudz juga menjadi kebanggaan bagi SDN Kauman Magetan. Ini adalah bukti nyata dari komitmen sekolah untuk mendukung pengembangan siswa dalam segala aspek kehidupan, termasuk dalam olahraga. Semoga keberhasilan seperti ini terus menjadi inspirasi bagi siswa-siswa lain di sekolah ini untuk mengejar impian mereka dan berusaha menjadi yang terbaik dalam bidang yang mereka pilih.</p>
 <p class="MsoNormal" style="text-align: justify;"><strong>Selamat dan Semangat Terus, Ananda Mahfudz!</strong></p>
 <p class="MsoNormal" style="text-align: justify;">Seluruh komunitas SDN Kauman Magetan ingin mengucapkan selamat kepada Ananda Mahfudz atas prestasinya yang mengagumkan dalam O2SN Cabang Kids Athletic Putra di tingkat Kabupaten Magetan. Semoga prestasi ini hanya menjadi awal dari banyak pencapaian luar biasa di masa depan. Teruskan semangat dan kerja kerasmu, dan kami semua berharap untuk melihatmu meraih kesuksesan yang lebih besar lagi. Terima kasih atas kebanggaan dan inspirasi yang telah Ananda Mahfudz berikan kepada kita semua di SDN Kauman Magetan.</p>',
+        ]);
+        Post::create([
+            'category_id' => 1,
+            'title' => 'Pembentukan Karakter: Nilai-nilai Etika di SD Negeri Kauman Magetan',
+            'slug' => 'pembentukan-karakter-nilai-nilai-etika-di-sd-negeri-kauman-magetan',
+            'image' => 'post-images/lyZGsUkQJlmkuVwTKxguTsCylH1HehzZeYtO9fFm.webp',
+            'excerpt' => 'Pembentukan karakter adalah salah satu aspek penting dalam pendidikan anak-anak di sekolah. SD Neger...',
+            'body' => '<p>Pembentukan karakter adalah salah satu aspek penting dalam pendidikan anak-anak di sekolah. SD Negeri Kauman Magetan merupakan salah satu sekolah yang memiliki komitmen kuat dalam membentuk karakter siswa melalui penerapan nilai-nilai etika. Nilai-nilai etika ini menjadi dasar dalam membentuk pribadi yang baik, bertanggung jawab, dan memiliki integritas tinggi.</p>
+<p>Salah satu nilai etika yang diterapkan di SD Negeri Kauman Magetan adalah kejujuran. Kejujuran diajarkan kepada siswa sebagai prinsip dasar dalam berinteraksi dengan orang lain. Siswa diajarkan untuk selalu berkata jujur, mengakui kesalahan, dan tidak melakukan tindakan curang. Dengan mengajarkan nilai kejujuran, sekolah ini berharap siswa dapat menjadi individu yang dapat dipercaya dan memiliki integritas tinggi.Selain kejujuran, nilai etika lain yang ditekankan di SD Negeri Kauman Magetan adalah disiplin. Siswa diajarkan untuk memiliki kedisiplinan dalam menjalankan tugas-tugas sekolah, mengikuti aturan, dan menghormati waktu. </p>
+<p>Dengan mengajarkan nilai disiplin, sekolah ini berharap siswa dapat menjadi individu yang bertanggung jawab dan memiliki kemampuan untuk mengatur diri sendiri.Selanjutnya, nilai etika yang juga ditekankan di SD Negeri Kauman Magetan adalah kerjasama. Siswa diajarkan untuk bekerja sama dalam kelompok, saling membantu, dan menghargai kontribusi setiap individu. Melalui pembelajaran kerjasama, sekolah ini berharap siswa dapat menjadi individu yang mampu bekerja dalam tim, menghargai perbedaan, dan memiliki sikap empati terhadap orang lain.Selain itu, nilai etika yang ditekankan di SD Negeri Kauman Magetan adalah tanggung jawab.</p>
+<p>Siswa diajarkan untuk bertanggung jawab terhadap tugas-tugas sekolah, lingkungan, dan diri sendiri. Dengan mengajarkan nilai tanggung jawab, sekolah ini berharap siswa dapat menjadi individu yang dapat diandalkan, memiliki rasa memiliki terhadap tugas-tugasnya, dan mampu mengambil keputusan yang baik.Penerapan nilai-nilai etika di SD Negeri Kauman Magetan tidak hanya dilakukan melalui pembelajaran di kelas, tetapi juga melalui kegiatan ekstrakurikuler, seperti kegiatan sosial, kegiatan lingkungan, dan kegiatan keagamaan. Melalui kegiatan-kegiatan ini, siswa diajarkan untuk mengaplikasikan nilai-nilai etika dalam kehidupan sehari-hari.Dengan adanya penerapan nilai-nilai etika di SD Negeri Kauman Magetan, diharapkan siswa dapat tumbuh menjadi individu yang memiliki karakter yang baik, bertanggung jawab, dan memiliki integritas tinggi. Pembentukan karakter yang baik ini akan membantu siswa dalam menghadapi tantangan di masa depan dan menjadi individu yang berkontribusi positif bagi masyarakat.</p>',
+        ]);
+        Post::create([
+            'category_id' => 1,
+            'title' => 'Sekilas Tentang SD Negeri Kauman Magetan : Sejarah, Visi, dan Misi',
+            'slug' => 'sekilas-tentang-sd-negeri-kauman-magetan-sejarah-visi-dan-misi',
+            'image' => 'post-images/gJr5FfpU6kMSRRvvKx6VRmppXVcviKt2TJVV98y4.webp',
+            'excerpt' => 'Visi: Terwujudnya Sekolah Dalam Prestasi Berdasarkan Iman dan Takwa\r\nVisi kami, \"Terwujudnya Sekolah...',
+            'body' => '<p style="text-align: justify;"><strong>Visi: Terwujudnya Sekolah Dalam Prestasi Berdasarkan Iman dan Takwa</strong></p>
+<p style="text-align: justify;">Visi kami, "Terwujudnya Sekolah Dalam Prestasi Berdasarkan Iman dan Takwa," menjadi sumber inspirasi dan arah perjalanan kami. Kami percaya bahwa keberhasilan sejati tidak hanya terletak pada pencapaian akademik, tetapi juga pada pembentukan karakter yang kokoh berlandaskan iman dan takwa.</p>
+<p style="text-align: justify;"><strong>Misi Sekolah Dasar Negeri Kami</strong></p>
+<ol style="text-align: justify;">
+<li>
+<p><strong>Meningkatkan dan menguatkan Iman dan Taqwa</strong>: Kami berkomitmen untuk mengembangkan nilai-nilai iman dan takwa di antara siswa kami melalui pendidikan agama, pembinaan karakter, dan praktik-praktik yang mempromosikan moralitas dan etika yang baik.</p>
+</li>
+<li>
+<p><strong>Meningkatkan Kualitas Sumber Daya Manusia</strong>: Kami percaya bahwa sumber daya manusia adalah aset berharga dalam pencapaian visi kami. Melalui pelatihan dan pengembangan berkelanjutan, kami berusaha untuk memiliki staf pendidik dan karyawan yang terampil dan berkualitas.</p>
+</li>
+<li>
+<p><strong>Unggul Dalam Bidang Akademik dan Non-Akademik</strong>: Sekolah kami berupaya untuk mencapai prestasi tinggi dalam berbagai aspek pendidikan, termasuk akademik dan non-akademik. Kami mendorong siswa kami untuk mengejar pengetahuan dan keterampilan yang holistik.</p>
+</li>
+<li>
+<p><strong>Membentuk kerjasama yang menguasai ilmu pengetahuan, teknologi, dan seni serta kacakapan hidup</strong>: Kami mempersiapkan siswa kami dengan pengetahuan yang komprehensif, teknologi, seni, dan keterampilan hidup yang akan membantu mereka sukses dalam dunia yang terus berubah.</p>
+</li>
+<li>
+<p><strong>Melaksanakan Pembelajaran Bernuansa PAKEM</strong>: Pembelajaran di sekolah kami diarahkan dengan metode PAKEM (Pendekatan, Aktivitas, Komunikasi, Evaluasi, dan Media), yang mempromosikan pembelajaran yang efektif, interaktif, dan menyenangkan.</p>
+</li>
+<li>
+<p><strong>Menjalin kerjasama yang harmonis antara warga sekolah, komite, dan lingkungan</strong>: Kami menghargai kerjasama yang erat antara semua pihak terkait dengan sekolah. Dalam semangat harmoni, kami bekerja bersama untuk mencapai visi dan misi kami.</p>
+</li>
+</ol>
+<p style="text-align: justify;">Sekolah Dasar Negeri Kauman berkomitmen untuk terus mewujudkan visi dan misi ini dalam praktik sehari-hari, menciptakan lingkungan pendidikan yang mempromosikan prestasi akademik dan moralitas, serta mempersiapkan siswa untuk menjadi pemimpin masa depan yang berintegritas dan sukses. Dengan pendekatan yang kokoh dan tujuan yang jelas, kami siap menghadapi masa depan dengan keyakinan dan harapan.</p>',
         ]);
     }
 }
