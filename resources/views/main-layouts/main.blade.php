@@ -4,7 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Primary Meta Tags -->
-    <title>SD Negeri Kauman Magetan</title>
+    <title>{{ $title }}</title>
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
     <meta name="title" content="SD Negeri Kauman Magetan" />
     <meta name="description" content="SD Negeri Kauman Magetan, Sekolah Ramah Anak" />
 

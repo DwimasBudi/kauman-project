@@ -15,8 +15,8 @@
     <link href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css" rel="stylesheet">
     <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
-
-    <title>Admin Dashboard Panel</title> 
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+    <title>Admin Dashboard Kauman</title>
 </head>
 <body>
     @include('dashboard.layouts.sidebar')

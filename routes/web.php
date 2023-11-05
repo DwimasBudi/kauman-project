@@ -41,15 +41,14 @@ Route::resource('/comment', CommentController::class);
 // Route::resource('/dashboard/categories', CategoryController::class)->middleware('auth');
 // Route::get('/dashboard/categories/{category:slug}/edit', [CategoryDashboardController::class, 'edit']);
 
-Route::get('/dashboard/visimisi/{visimisi:slug}/edit', [VisiDashboardController::class, 'show']);
-Route::post('/dashboard/visimisi/{visimisi:slug}/update', [VisiDashboardController::class, 'update']);
-Route::get('/dashboard/sambutan/{sambutan:slug}/edit', [SambutanController::class, 'show']);
-Route::post('/dashboard/sambutan/{sambutan:slug}/update', [SambutanController::class, 'update']);
-Route::get('/dashboard/kontak/{kontak:slug}/edit', [KontakController::class, 'show']);
-Route::post('/dashboard/kontak/{kontak:slug}/update', [KontakController::class, 'update']);
+Route::get('/dashboard/visimisi/{visimisi:slug}/edit', [VisiDashboardController::class, 'show'])->middleware('auth');
+Route::post('/dashboard/visimisi/{visimisi:slug}/update', [VisiDashboardController::class, 'update'])->middleware('auth');
+Route::get('/dashboard/sambutan/{sambutan:slug}/edit', [SambutanController::class, 'show'])->middleware('auth');
+Route::post('/dashboard/sambutan/{sambutan:slug}/update', [SambutanController::class, 'update'])->middleware('auth');
+Route::get('/dashboard/kontak/{kontak:slug}/edit', [KontakController::class, 'show'])->middleware('auth');
+Route::post('/dashboard/kontak/{kontak:slug}/update', [KontakController::class, 'update'])->middleware('auth');
 
 Route::get('/dashboard/post/checkSlug', [DashboardPostController::class, 'checkSlug'])->middleware('auth');
-Route::get('/dashboard/kont/', [DashboardPostController::class, 'kont'])->middleware('auth');
 
 Route::get('/ip', function (Request $request) {
     return $request->ip();

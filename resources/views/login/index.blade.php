@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Login & Registration Form | CoderGirl</title>
+  <title>Login Admin Kauman</title>
   <!---Custom CSS File--->
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
   <link rel="stylesheet" href="css/login-style.css">
@@ -28,7 +28,12 @@
   </div>
   <div class="container">
     <div class="login form">
-      <header>Admin Login</header>
+      <div class="row">
+        <img src="{{ asset('img/logo.png') }}" alt="logo-kauman" style="max-width: 120px; max-height: auto; object-fit:cover; margin:0 auto;">
+        <header>Admin Login</header>
+      </div>
+      
+      
       <form action="login" method="POST">
         @csrf
         <input type="text" name="username" placeholder="username" @if (session()->has('loginLimit'))

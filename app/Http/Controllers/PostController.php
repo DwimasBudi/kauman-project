@@ -14,16 +14,12 @@ class PostController extends Controller
 {
     public function index()
     {
-        $title = "";
-        if (request('category')) {
-            $category = Category::firstWhere('slug', request('category'));
-            $title = ' in ' . $category->name;
-        }
         return view('index', [
             'posts' => Post::orderBy('created_at', 'desc')->get(),
             'visi' => VisiMisi::get()->first(),
             'sambutan' => Sambutan::get()->first(),
             'kontak' => Kontak::get()->first(),
+            'title' => 'SD Negeri Kauman Magetan',
         ]);
     }
     public function blog()
@@ -31,10 +27,11 @@ class PostController extends Controller
         $title = "";
         if (request('category')) {
             $category = Category::firstWhere('slug', request('category'));
-            $title = ' in ' . $category->name;
+            $title = ' | '.$category->name;
         }
         return view('blog', [
             'posts' => Post::latest()->filter(request(['search', 'category', 'author']))->paginate(10)->withQueryString(),
+            'title' => 'SD Negeri Kauman Magetan' . $title,
             // 'posts' => Post::orderBy('created_at', 'desc')->paginate(10),
             'postx' => Post::orderBy('created_at', 'desc')->get(),
             'visi' => VisiMisi::get()->first(),
