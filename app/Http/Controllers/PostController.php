@@ -42,14 +42,13 @@ class PostController extends Controller
     }
     public function show(Post $post)
     {
-        // return dd($post->id);
         return view('post', [
             'title' => $post->title,
             'posts' => Post::orderBy('id', 'desc')->get(),
             'postx' => Post::orderBy('id', 'desc')->get(),
             'post' => $post,
             'categories'=> Category::latest()->get(),
-            'comments' => Comment::where('post_id', $post->id)->paginate(10)
+            'comments' => Comment::where('post_id', $post->id)->where('reply_id', null)->paginate(10),
 
         ]);
     }

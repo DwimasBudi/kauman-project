@@ -77,7 +77,7 @@ class RouteServiceProvider extends ServiceProvider
             });
         });
         RateLimiter::for('comment', function (Request $request) {
-            return Limit::perMinute(5)->by($request->ip())->response(function () {
+            return Limit::perMinute(3)->by($request->ip())->response(function () {
                 $message = 'Jangan Spam Commentar! Tunggu 1 Menit !';
                 return redirect()->to(app('url')->previous() . "#comment")->withCookie(cookie('CommentLimit', $message, 1));
             });

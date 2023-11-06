@@ -46,14 +46,16 @@ class CommentController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request);
+        // dd($request->toArray());
         $validatedData = $request->validate([
             'post_id' => 'required',
-            'username' => 'required',
-            'email' => 'required',
+            'reply_id' => 'nullable',
+            'username' => 'required|max:50',
+            'email' => 'required|max:50',
             'comment' => 'required',
 
         ]);
+        
         Comment::create($validatedData);
         // return back();
         return redirect()->to(app('url')->previous() . "#comment")->with('success', 'Comment Has Ben Added');

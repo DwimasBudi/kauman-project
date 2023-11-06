@@ -42,7 +42,7 @@
                 <form action="/dashboard/comment/{{ $comment->id }}" method="post" class="d-inline">
                   @method('delete')
                   @csrf
-                  <button class="badge bg-danger border-0" onclick="return confirm('Are you sure?')"><i class="uil uil-times-circle"></i></button>
+                  <button class="badge bg-danger border-0"><i class="uil uil-times-circle"></i></button>
                 </form>
               </td>
             </tr>

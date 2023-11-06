@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="css/login-style.css">
 </head>
 <body>
-  <div class="container-fluid col-4 mt-2" style="z-index: 9999;">
+  <div class="container-fluid col-lg-4 col-md-8 col-sm-10 mt-2" style="z-index: 9999;">
     @if (session()->has('success'))
     <div class="alert alert-success alert-dismissible fade show" role="alert" style="z-index: 9999;">
       {{ session('success') }}
@@ -19,7 +19,7 @@
     </div>
     @endif
     @if (session()->has('loginError') || Cookie::has('loginLimit'))
-    <div class="alert alert-danger alert-dismissible fade show" role="alert" style="z-index: 9999;">
+    <div class="alert alert-danger alert-dismissible fade show col-sm-12" role="alert" style="z-index: 9999;">
       {{ session('loginError') }} 
       {{ Cookie::get('loginLimit') }} 
       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>

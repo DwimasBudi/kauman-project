@@ -15,6 +15,10 @@ class Comment extends Model
     {
         return $this->belongsTo(Post::class, 'post_id');
     }
+    public function replies()
+    {
+        return $this->hasMany(Comment::class, 'reply_id');
+    }
     // public function getRouteKeyName()
     // {
     //     return 'id';

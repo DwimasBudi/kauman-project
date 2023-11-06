@@ -17,6 +17,7 @@ class CreateCommentsTable extends Migration
             $table->id();
             $table->foreignId('post_id')->references('id')->on('posts')->onDelete('cascade');
             $table->string('email');
+            $table->integer('reply_id')->nullable();
             $table->string('username');
             $table->text('comment');
             $table->timestamps();
