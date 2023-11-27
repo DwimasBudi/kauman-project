@@ -78,7 +78,7 @@
                     </div>
             </div>
         </div> --}}
-        <div class="container-fluid my-5 px-5">
+        <div id="sambutan" class="container-fluid my-5 px-5">
             <div class="row row-main">
                 <div class="col-lg-6 col-md-12 d-flex justify-content-center align-items-center">
                     <img class="main-img" src="{{ asset('storage/'. $sambutan->image) }}" alt="">

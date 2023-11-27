@@ -26,8 +26,8 @@
     @enderror
   </div>
   <div class="mb-3">
-    <label for="category" class="form-label">Category</label>
-    <select class="form-select @error('category') is-invalid @enderror" name="category_id" id="category" required>
+    <label for="category_id" class="form-label">Category</label>
+    <select class="form-select @error('category_id') is-invalid @enderror" name="category_id" id="category_id" required>
         <option selected disabled>Pilih kategory</option>
         @foreach ($categories as $category)  
             @if (old('category_id') == $category->id)
@@ -37,7 +37,7 @@
             @endif
         @endforeach
     </select>
-    @error('category')
+    @error('category_id')
         <div class="invalid-feedback">
             {{$message}}
         </div> 
@@ -75,7 +75,7 @@
         </p> 
     @enderror
         <textarea name="body" id="body" cols="30" rows="20" required>
-            
+            {{ old("body") }}
         </textarea>
   </div>
 

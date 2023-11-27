@@ -32,7 +32,7 @@
                         <a class="nav-link text-light" href="{{ asset('/artikel?category=pengumuman') }}">Pengumuman</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="{{ asset('/artikel?category=prestasi') }}">Prestasi</a>
+                        <a class="nav-link text-light" href="{{ asset('/#sambutan') }}">Sambutan</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-light" href="{{ asset('/#visi-misi') }}">Visi-Misi</a>
@@ -46,10 +46,9 @@
                             Artikel
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="{{ asset('/artikel?category=prestasi') }}">Prestasi</a></li>
-                            <li><a class="dropdown-item" href="{{ asset('/artikel?category=berita') }}">Berita</a></li>
-                            <li><a class="dropdown-item" href="{{ asset('/artikel?category=pengumuman') }}">Pengumuman</a></li>
-                            <li>
+                            @foreach ($categories as $category)  
+                                <li><a class="dropdown-item" href="{{ asset('/artikel?category=') }}{{ $category->slug }}">{{ $category->name }}</a></li>
+                            @endforeach
                                 <hr class="dropdown-divider">
                             </li>
                             <li><a class="dropdown-item" href="{{ asset('/artikel') }}">Lihat semua</a></li>

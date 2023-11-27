@@ -19,6 +19,7 @@ class PostController extends Controller
             'visi' => VisiMisi::get()->first(),
             'sambutan' => Sambutan::get()->first(),
             'kontak' => Kontak::get()->first(),
+            'categories' => Category::orderBy('name')->get(),
             'title' => 'SD Negeri Kauman Magetan',
         ]);
     }
@@ -44,8 +45,8 @@ class PostController extends Controller
     {
         return view('post', [
             'title' => $post->title,
-            'posts' => Post::orderBy('id', 'desc')->get(),
-            'postx' => Post::orderBy('id', 'desc')->get(),
+            'posts' => Post::orderBy('created_at', 'desc')->get(),
+            'postx' => Post::orderBy('created_at', 'desc')->get(),
             'post' => $post,
             'categories'=> Category::latest()->get(),
             'comments' => Comment::where('post_id', $post->id)->where('reply_id', null)->paginate(10),

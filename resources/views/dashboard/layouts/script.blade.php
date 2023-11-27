@@ -6,15 +6,6 @@
 </script>
 <script src="/js/tinymce/tinymce.min.js"></script>
 <script>
-    const title = document.querySelector("#title");
-    const slug = document.querySelector("#slug");
-
-    title.addEventListener('change',function () {
-        fetch('/dashboard/post/checkSlug?title='+title.value)
-        .then(response=>response.json())
-        .then(data=>slug.value=data.slug)
-    });
-
     // TinyMCE
 tinymce.init({
   selector: 'textarea',
@@ -65,6 +56,7 @@ tinymce.init({
 
         /* call the callback and populate the Title field with the file name */
         cb(blobInfo.blobUri(), { title: file.name });
+      
       };
       reader.readAsDataURL(file);
     };
@@ -73,6 +65,16 @@ tinymce.init({
   },
   content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
 });
+</script>
+<script>
+    const title = document.querySelector("#title");
+    const slug = document.querySelector("#slug");
+
+    title.addEventListener('change',function () {
+        fetch('/dashboard/post/checkSlug?title='+title.value)
+        .then(response=>response.json())
+        .then(data=>slug.value=data.slug)
+    });
 </script>
 <script>
     function previewImage() {

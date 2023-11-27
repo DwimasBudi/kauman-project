@@ -8,22 +8,24 @@ use Illuminate\Support\Facades\Storage;
 
 class KontakController extends Controller
 {
-    public function show(Kontak $Kontak)
+    public function show()
     {
+        $Kontak = Kontak::find(1);
         // return $Kontak;
         return view("dashboard.kontak.edit", [
             'kontak' => $Kontak,
         ]);
     }
-    public function update(Request $request, Kontak $Kontak)
+    public function update(Request $request)
     {
+        $Kontak = Kontak::find(1);
         // return dd($request);
         $rules = [
             'image' => 'image|file|max:2048',
             'email' => 'required',
             'alamat' => 'required',
             'hp' => 'required',
-            'fax' => 'required',
+            // 'fax' => 'required',
         ];
         $validatedData = $request->validate($rules);
         if ($request->file('image')) {
@@ -34,6 +36,6 @@ class KontakController extends Controller
         }
         Kontak::where('id', $Kontak->id)->update($validatedData);
 
-        return redirect('/dashboard')->with('success', 'Kontak Updated');
+        return redirect('/dashboard/kontak/edit')->with('success', 'Kontak Updated');
     }
 }

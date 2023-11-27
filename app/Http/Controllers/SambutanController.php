@@ -8,16 +8,17 @@ use Illuminate\Support\Facades\Storage;
 
 class SambutanController extends Controller
 {
-    public function show(Sambutan $Sambutan)
+    public function show()
     {
-
+        $sambutan = Sambutan::find(1);
         return view("dashboard.sambutan.edit", [
-            'sambutan' => $Sambutan,
+            'sambutan' => $sambutan,
         ]);
     }
-    public function update(Request $request, Sambutan $Sambutan)
+    public function update(Request $request)
     {
         // return dd($request);
+        $Sambutan = Sambutan::find(1);
         $rules = [
             'image' => 'image|file|max:2048',
             'sambutan' => 'required',
@@ -31,6 +32,6 @@ class SambutanController extends Controller
         }
         Sambutan::where('id', $Sambutan->id)->update($validatedData);
 
-        return redirect('/dashboard')->with('success', 'Sambutan Updated');
+        return redirect('/dashboard/sambutan/edit')->with('success', 'Sambutan Updated');
     }
 }

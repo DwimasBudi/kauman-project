@@ -15,12 +15,11 @@ class CreateKontaksTable extends Migration
     {
         Schema::create('kontaks', function (Blueprint $table) {
             $table->id();
-            $table->string('slug')->unique();
-            $table->string('email');
-            $table->string('alamat');
-            $table->string('hp');
-            $table->string('fax');
-            $table->timestamps();
+            $table->string('email',50);
+            $table->string('alamat',150);
+            $table->string('hp',15);
+            // $table->string('fax');
+            // $table->timestamps();
         });
     }
 

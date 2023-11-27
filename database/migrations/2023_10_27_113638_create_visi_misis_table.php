@@ -15,11 +15,10 @@ class CreateVisiMisisTable extends Migration
     {
         Schema::create('visi_misis', function (Blueprint $table) {
             $table->id();
-            $table->string('slug')->unique();
             $table->text('visi');
             $table->text('misi');
-            $table->text('image');
-            $table->timestamps();
+            $table->string('image',70);
+            // $table->timestamps();
         });
     }
 

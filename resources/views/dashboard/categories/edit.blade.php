@@ -16,7 +16,7 @@
               @if (old('category_id') == $cate->id)
                   <option value="{{ $cate->id }}" selected>{{ $cate->name }}</option>
               @else
-                  <option value="{{ $cate->id }}">{{ $cate->name }}</option>
+                  <option value="{{ $cate->id }}">{{ $cate->nama }}</option>
               @endif
           @endforeach
       </select>
@@ -28,7 +28,7 @@
     </div>
   <div class="mb-3">
     <label for="title" class="form-label">Nama Category :</label>
-    <input type="text" name="name" class="form-control @error('title') is-invalid @enderror" id="title" placeholder="New Post Title" autofocus value="{{ old('title',$category->name) }}">
+    <input type="text" name="name" class="form-control @error('title') is-invalid @enderror" id="title" placeholder="New Category Name" autofocus value="{{ old('title',$category->name) }}">
     @error('title')
         <div class="invalid-feedback">
             {{$message}}

@@ -26,15 +26,15 @@
                     <i class="uil uil-tag-alt"></i>
                     <span class="link-name">Category</span>
                 </a></li>
-                <li><a {{ Request::is("dashboard/visimisi*") ? "class=active" : "" }} href="/dashboard/visimisi/visi-misi/edit">
+                <li><a {{ Request::is("dashboard/visimisi*") ? "class=active" : "" }} href="/dashboard/visi-misi/edit">
                     <i class="uil uil-bullseye"></i>
                     <span class="link-name">Visi-Misi</span>
                 </a></li>
-                <li><a {{ Request::is("dashboard/sambutan*") ? "class=active" : "" }} href="/dashboard/sambutan/sambutan/edit">
+                <li><a {{ Request::is("dashboard/sambutan*") ? "class=active" : "" }} href="/dashboard/sambutan/edit">
                     <i class="uil uil-megaphone"></i>
                     <span class="link-name">Sambutan</span>
                 </a></li>
-                <li><a {{ Request::is("dashboard/kontak*") ? "class=active" : "" }} href="/dashboard/kontak/kontak/edit">
+                <li><a {{ Request::is("dashboard/kontak*") ? "class=active" : "" }} href="/dashboard/kontak/edit">
                     <i class="uil uil-at"></i>
                     <span class="link-name">Kontak</span>
                 </a></li>

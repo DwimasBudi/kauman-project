@@ -44,13 +44,13 @@
                     <aside class="pb-3">
                         <h3 class="py-3 px-4"><span>Recent Post</span></h3>
                         <div class="content mx-2">
-                          @foreach ($posts->take(5) as $pos)
+                          @foreach ($postx->take(5) as $pos)
                             <div class="cards mb-4 d-flex justify-content-between align-items-center" style="max-width: 330px; flex-wrap: nowrap;">
                                 <a class="cover-link" href="/post/{{ $pos->slug }}"></a>
                                 <img src="{{ asset('storage/'. $pos->image) }}" class="rounded recent-img" alt="...">
                                 <div class="card-body ms-2">
                                     <p class="card-text img-text-10 mb-0 lh-base text-dark two-line">{{ $pos->title }}</p>
-                                    <a href="{{ asset('/artikel?category=') }}{{ $pos->category->name }}" class="badge ">{{ $pos->category->name }}</a>
+                                    <a href="{{ asset('/artikel?category=') }}{{ $pos->category->slug }}" class="badge ">{{ $pos->category->name }}</a>
                                     <span class="fs-8"> - {{ $pos->updated_at->format('d F Y') }}</span>
                                 </div>
                             </div>

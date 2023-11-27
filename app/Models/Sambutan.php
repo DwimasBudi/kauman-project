@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Sambutan extends Model
 {
     use HasFactory;
+    public $timestamps = false;
 }

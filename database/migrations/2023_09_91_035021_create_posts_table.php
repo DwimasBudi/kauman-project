@@ -17,9 +17,9 @@ class CreatePostsTable extends Migration
             $table->id();
             $table->foreignId('category_id')->references('id')->on('categories')->onDelete('cascade');
             // $table->foreignId('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->string('title');
-            $table->string('slug')->unique();
-            $table->string('image');
+            $table->string('title',200);
+            $table->string('slug',200)->unique();
+            $table->string('image',70);
             $table->text('excerpt');
             $table->text('body');
             $table->timestamp('published_at')->nullable();

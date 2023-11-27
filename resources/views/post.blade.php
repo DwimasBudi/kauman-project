@@ -22,7 +22,7 @@
                         <ul>
                           @foreach ($categories as $category)
                           <li class="cat-item">
-                            <a href="{{ asset('/artikel?category=') }}{{ $category->name }}">{{ $category->name }}</a>
+                            <a href="{{ asset('/artikel?category=') }}{{ $category->slug }}">{{ $category->name }}</a>
                             <span class="count mx-5"> ({{ $postx->where('category_id',$category->id)->count() }})</span>
                           </li>
                           @endforeach
@@ -37,7 +37,7 @@
                                   <img src="{{ asset('storage/'. $pos->image) }}" class="rounded recent-img" alt="{{ $pos->title }}">
                                 <div class="card-body ms-2">
                                     <p class="card-text img-text-10 mb-0 lh-base text-dark two-line">{{ $pos->title }}</p>
-                                    <a href="{{ asset('/artikel?category=') }}{{ $pos->category->name }}" class="badge ">{{ $pos->category->name }}</a>
+                                    <a href="{{ asset('/artikel?category=') }}{{ $pos->category->slug }}" class="badge ">{{ $pos->category->name }}</a>
                                     <span class="fs-8"> - {{ $pos->updated_at->format('d F Y') }}</span>
                                 </div>
                             </div>
@@ -174,7 +174,7 @@
 
 
                               @if (Auth::check())
-                              <input name="email" type="email" class="form-control mx-3" placeholder="email" aria-label="email" required @if (Cookie::has('CommentLimit')) disabled @endif value="admin@kauman.sch.id">
+                              <input name="email" type="email" class="form-control mx-3" placeholder="email" aria-label="email" required @if (Cookie::has('CommentLimit')) @endif value="admin@kauman.sch.id" readonly>
                               @endif
                               @if (!Auth::check())
                               <input name="email" type="email" class="form-control mx-3 @error('email') is-invalid @enderror" placeholder="@error('email') {{$message}} @else Email @enderror" aria-label="email" required @if (Cookie::has('CommentLimit')) disabled @endif>
@@ -185,7 +185,7 @@
                           </div>
                         </div>
                         <div class="float-end mt-2 pt-1">
-                          <button type="submit" class="btn btn-primary btn-sm" @if (Cookie::has('CommentLimit')) disabled @endif >Post comment</button>
+                          <button type="submit" class="btn btn-primary btn-sm" @if (Cookie::has('CommentLimit')) disabled @endif >Create Comment</button>
                         </div>
                       </form>
                     </div>
