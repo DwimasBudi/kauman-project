@@ -49,7 +49,9 @@ header {
     border-radius: 5px;
     color: #4DA3FF !important;
 }
-
+.dropdown-item:hover{
+    color: #4DA3FF !important;
+}
 .container-fluid a {
     color: white;
 }
