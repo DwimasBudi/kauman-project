@@ -3,9 +3,9 @@
             <div class="navbar-nav text-dark w-100 d-flex justify-content-start flex-row">
                 <a class="nav-link text-dark mx-1" href="#">Profil</a>
                 <a class="nav-link text-dark mx-1" href="/admin">Admin</a>
-                <a class="nav-link text-dark mx-1" href="#">Youtube</a>
-                <a class="nav-link text-dark mx-1" href="#">Instagram</a>
-                <a class="nav-link text-dark mx-1" href="#">Whatsapp</a>
+                <a class="nav-link text-dark mx-1" href="https://www.youtube.com/@sdnegerikaumankec.karangre7291">Youtube</a>
+                <a class="nav-link text-dark mx-1" href="https://www.instagram.com/sdnkauman">Instagram</a>
+                <a class="nav-link text-dark mx-1" href="https://wa.me/+6289696574935">Whatsapp</a>
             </div>
         </div>
     </header>
