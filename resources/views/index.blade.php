@@ -15,23 +15,23 @@
                         </div>
                         <div class="carousel-inner h-100 w-100">
                             <div class="carousel-item active h-100">
-                                 <a class="cover-link" href="/post/{{ $posts[0]->slug }}"></a>
-                                <img src="{{ asset('storage/'.$posts[0]->image)  }}" class="d-block w-100 h-100" alt="...">
+                                 <a class="cover-link" href="/post/{{ $headline[0]->slug }}"></a>
+                                <img src="{{ asset('storage/'.$headline[0]->image)  }}" class="d-block w-100 h-100" alt="...">
                                 <div class="carousel-caption">
-                                    <a class="badge" href="">{{ $posts[0]->category->name }}</a>
-                                    <h5 style="font-size: 20px;">{{ $posts[0]->title }}</h5>
-                                    <span class="card-text mb-0 fw-bold fs-8">SDNKauman</span><span class="fs-8"> - {{ $posts[0]->updated_at->format('d F Y') }}</span>
+                                    <a class="badge" href="">{{ $headline[0]->category->name }}</a>
+                                    <h5 style="font-size: 20px;">{{ $headline[0]->title }}</h5>
+                                    <span class="card-text mb-0 fw-bold fs-8">SDNKauman</span><span class="fs-8"> - {{ $headline[0]->updated_at->format('d F Y') }}</span>
                                     <!-- <p>Some representative placeholder content for the first slide.</p> -->
                                 </div>
                             </div>
-                            @foreach ($posts->skip(1)->take(2) as $post)
+                            @foreach ($headline->skip(1)->take(2) as $head)
                             <div class="carousel-item h-100">
-                                <a class="cover-link" href="/post/{{ $post->slug }}"></a>
-                                <img src="{{ asset('storage/'. $post->image) }}" class="d-block w-100 h-100" alt="...">
+                                <a class="cover-link" href="/post/{{ $head->slug }}"></a>
+                                <img src="{{ asset('storage/'. $head->image) }}" class="d-block w-100 h-100" alt="...">
                                 <div class="carousel-caption">
-                                    <a class="badge" href="">{{ $post->category->name }}</a>
-                                    <h5 style="font-size: 20px;">{{ $post->title }}</h5>
-                                    <span class="card-text mb-0 fw-bold fs-8">SDNKauman</span><span class="fs-8"> - {{ $post->updated_at->format('d F Y') }}</span>
+                                    <a class="badge" href="">{{ $head->category->name }}</a>
+                                    <h5 style="font-size: 20px;">{{ $head->title }}</h5>
+                                    <span class="card-text mb-0 fw-bold fs-8">SDNKauman</span><span class="fs-8"> - {{ $head->updated_at->format('d F Y') }}</span>
                                     <!-- <p>Some representative placeholder content for the first slide.</p> -->
                                 </div>
                             </div>
@@ -56,7 +56,7 @@
                 {{-- <h3>Artikel</h3> --}}
             </div>
             <div class="owl-carousel owl-theme">
-                @foreach ($posts->skip(3)->take(6) as $post)
+                @foreach ($posts as $post)
                 <div class="item">
                     <a class="cover-link" href="/post/{{ $post->slug }}"></a>
                         <div class="carousel-item-image">

@@ -15,7 +15,8 @@ class PostController extends Controller
     public function index()
     {
         return view('index', [
-            'posts' => Post::orderBy('id', 'asc')->get(),
+            'posts' => Post::orderBy('id', 'desc')->get(),
+            'headline' => Post::orderBy('id', 'asc')->get(),
             'visi' => VisiMisi::get()->first(),
             'sambutan' => Sambutan::get()->first(),
             'kontak' => Kontak::get()->first(),

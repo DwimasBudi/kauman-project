@@ -1,11 +1,11 @@
 
 <nav id="navbar">
         <div class="logo-name">
-            <div class="logo-image">
-                {{-- <img src="img/1.png" alt=""> --}}
-            </div>
+            {{-- <div class="logo-image">
+                <img src="img/1.png" alt="">
+            </div> --}}
 
-            <span class="logo_name">Kauman</span>
+            <span class="logo_name">Admin Kauman</span>
         </div>
 
         <div class="menu-items">
