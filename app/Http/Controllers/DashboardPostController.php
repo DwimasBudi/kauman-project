@@ -46,13 +46,13 @@ class DashboardPostController extends Controller
      */
     public function store(Request $request)
     {
-        
         $validatedData = $request->validate([
             'title' => 'required|max:255|min:10',
             'slug' => 'required|unique:posts',
             'category_id' => 'required',
             'image' => 'required|image|file|max:1024',
             'body' => 'required',
+            'published_at' => 'required',
         ]);
 
         if ($request->file('image')) {
@@ -131,7 +131,8 @@ class DashboardPostController extends Controller
             'title' => 'required|max:255|min:4',
             'category_id' => 'required',
             'image' => 'image|file|max:5024',
-            'body' => 'required'
+            'body' => 'required',
+            'published_at' => 'required',
         ];
 
         if($request->slug!==$post->slug){

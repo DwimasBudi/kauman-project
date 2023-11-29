@@ -137,10 +137,6 @@
                                     <i class="uil uil-phone-volume"></i>
                                     <p>Telephone <br><span>{{ $kontak->hp }}</span></p>
                                 </li>
-                                {{-- <li>
-                                    <i class="uil uil-print"></i>
-                                    <p>Fax <br><span>{{ $kontak->fax }}</span></p>
-                                </li> --}}
                             </ul>
                         </div>
                         

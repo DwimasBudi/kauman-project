@@ -26,6 +26,15 @@
     @enderror
   </div>
   <div class="mb-3">
+    <label for="datepicker" class="form-label">published :</label>
+    <input type="text" name="published_at" class="form-control @error('slug') is-invalid @enderror" id="datepicker"  value="{{ old('published_at') }}">
+    @error('published_at')
+        <div class="invalid-feedback">
+            {{$message}}
+        </div> 
+    @enderror
+  </div>
+  <div class="mb-3">
     <label for="category_id" class="form-label">Category</label>
     <select class="form-select @error('category_id') is-invalid @enderror" name="category_id" id="category_id" required>
         <option selected disabled>Pilih kategory</option>
@@ -57,7 +66,7 @@
 <div class="mb-3">
   <label class="form-label">Fitur AI (Beta):</label>
   <div class="input-group">
-    <input id="promptInput" type="text" class="form-control" placeholder="Keajaiban AI...." aria-label="Recipient's username" aria-describedby="button-addon2">
+    <input id="promptInput" name="promptInput" type="text" class="form-control" placeholder="Keajaiban AI...." aria-label="Recipient's username" aria-describedby="button-addon2"value="{{ old('promptInput') }}" >
     <button class="btn btn-outline-secondary" type="button" id="generateBtn"><i class="bi bi-magic"></i> Generate</button>
     <button class="btn btn-outline-secondary" type="button" id="stopBtn"><i class="uil uil-stop-circle"></i> Stop</button>
   </div>
@@ -82,4 +91,11 @@
   <button type="submit" class="btn btn-primary mt-3">Create Post</button>
 </form>
 </div>
+<script>
+        $('#datepicker').datepicker({
+            uiLibrary: 'bootstrap5',
+            format: 'yyyy-mm-dd',
+            value: '{{ now()->format('Y-m-d') }}'
+        });
+</script>
 @endsection

@@ -26,10 +26,10 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('password')
         ]);
         User::create([
-            'nama' => 'Wisnu Aryo Putro',
-            'username' => 'admin',
+            'nama' => 'Admin SDN Kauman',
+            'username' => 'sdnkauman',
             // 'email' => 'wisnuaryo@gmail.com',
-            'password' => bcrypt('admin')
+            'password' => bcrypt('@Admin.com')
         ]);
         Category::create([
             'name' => 'Berita',
@@ -71,6 +71,7 @@ class DatabaseSeeder extends Seeder
         Post::create([
             'category_id' => 1,
             'title' => 'Guru dan Staf Sekolah Dasar Negeri Kauman Magetan : Penggerak Kesuksesan Pendidikan Anak Bangsa',
+            'published_at' => now()->format('Y-m-d'),
             'slug' => 'guru-dan-staf-sekolah-dasar-negeri-kauman-magetan-penggerak-kesuksesan-pendidikan-anak-bangsa',
             'image' => 'post-images/5bOscsb9ZQDVFlKVhJQpDjrvQn5OZOBKWJH3Aq3I.jpg',
             'excerpt' => 'Guru dan staf sekolah dasar negeri merupakan sosok yang sangat penting dalam menciptakan kesuksesan...',
@@ -84,6 +85,7 @@ class DatabaseSeeder extends Seeder
         
         Post::create([
             'category_id' => 1,
+            'published_at' => now()->format('Y-m-d'),
             'title' => 'Cerdas Cermat: Mengembangkan Kemampuan Anak SD Kelas 1-3',
             'slug' => 'cerdas-cermat-mengembangkan-kemampuan-anak-sd-kelas-1-3',
             'image' => 'post-images/wTS1RUxOGOfuFT8EGJg1MKNdCsxqvfNhejQEXdBx.jpg',
@@ -100,6 +102,7 @@ class DatabaseSeeder extends Seeder
         ]);
         Post::create([
             'category_id' => 1,
+            'published_at' => now()->format('Y-m-d'),
             'title' => 'Cerdas Cermat: Mengembangkan Kemampuan Anak SD Kelas 4-6',
             'slug' => 'cerdas-cermat-mengembangkan-kemampuan-anak-sd-kelas-4-6',
             'image' => 'post-images/Qmke99rIOpzDAYEf95cpY34eKl4b8pv5FXJHqIl1.jpg',
@@ -116,6 +119,7 @@ class DatabaseSeeder extends Seeder
         ]);
         Post::create([
             'category_id' => 1,
+            'published_at' => now()->format('Y-m-d'),
             'title' => 'Kegiatan Literasi Membaca Peserta Didik SDN Kauman Magetan',
             'slug' => 'kegiatan-literasi-membaca-peserta-didik-sdn-kauman-magetan',
             'image' => 'post-images/dZpxOhrEbiEZYxEmRlFVAw2gYOoD6RIci2ftmVUe.jpg',
@@ -131,6 +135,7 @@ class DatabaseSeeder extends Seeder
         ]);
         Post::create([
             'category_id' => 1,
+            'published_at' => now()->format('Y-m-d'),
             'title' => 'Peringatan Hari Kesaktian Pancasila: Memahami dan Menghargai Nilai-nilai Pancasila di SDN Kauman Magetan',
             'slug' => 'peringatan-hari-kesaktian-pancasila-memahami-dan-menghargai-nilai-nilai-pancasila-di-sdn-kauman-magetan',
             'image' => 'post-images/FypShYcUsTgWTmq5U29sny8t38s9QSyf1QUqTRtS.jpg',
@@ -151,7 +156,8 @@ class DatabaseSeeder extends Seeder
 <p class="MsoNormal" style="text-align: justify;">Sebagai sekolah yang mendidik generasi muda, SDN Kauman Magetan berkomitmen untuk terus mempromosikan semangat Pancasila dan menjaga kesatuan dan persatuan bangsa. Peringatan Hari Kesaktian Pancasila adalah salah satu cara yang efektif untuk mencapai tujuan tersebut dan memastikan bahwa generasi muda memiliki pemahaman yang kuat tentang nilai-nilai Pancasila sebagai landasan negara.</p>',
         ]);
         Post::create([
-            'category_id' => 1,
+            'category_id' => 3,
+            'published_at' => now()->format('Y-m-d'),
             'title' => 'Menggali Potensi Siswa: Persiapan Menghadapi ANBK di SDN Kauman Magetan Tahun Ajaran 2023/2024',
             'slug' => 'menggali-potensi-siswa-persiapan-menghadapi-anbk-di-sdn-kauman-magetan-tahun-ajaran-2023-2024',
             'image' => 'post-images/MFLm8m87RuODZn8o2RYamejvg5l8JUpKojyeqt1t.jpg',
@@ -174,6 +180,7 @@ class DatabaseSeeder extends Seeder
         ]);
         Post::create([
             'category_id' => 1,
+            'published_at' => now()->format('Y-m-d'),
             'title' => 'Percikan Kenangan dan Terima Kasih: Perpisahan dengan Guru Ibu Nanik di SDN Kauman Magetan',
             'slug' => 'percikan-kenangan-dan-terima-kasih-perpisahan-dengan-guru-ibu-nanik-di-sdn-kauman-magetan',
             'image' => 'post-images/P9HyTY2WPUKwonHOS4qesNnS4zggeE9D7p2BUx6C.jpg',
@@ -192,7 +199,8 @@ class DatabaseSeeder extends Seeder
 <p class="MsoNormal" style="text-align: justify;">Perpisahan dengan Guru Ibu Nanik adalah momen yang penuh haru, tetapi juga merupakan peluang untuk menghormati dan merayakan dedikasinya dalam dunia pendidikan. Kami mengucapkan selamat jalan kepada Guru Ibu Nanik dengan penuh rasa hormat dan haru, dan kami berterima kasih atas semua yang telah dia berikan kepada kami. Semoga perjalanan berikutnya penuh dengan kebahagiaan dan keberhasilan, dan semoga kenangan kami bersama akan selalu menghangatkan hati kita. Terima kasih, Guru Ibu Nanik.</p>',
         ]);
         Post::create([
-            'category_id' => 1,
+            'category_id' => 2,
+            'published_at' => now()->format('Y-m-d'),
             'title' => 'Ananda Mahfudz: Bintang Terang dari SDN Kauman Magetan yang Maju ke Tingkat Provinsi Jawa Timur O2SN Cabang Kids Athletic Putra',
             'slug' => 'ananda-mahfudz-bintang-terang-dari-sdn-kauman-magetan-yang-maju-ke-tingkat-provinsi-jawa-timur-o2sn-cabang-kids-athletic-putra',
             'image' => 'post-images/pMrVhdGp9w7GiTigLLr3ZFANzgS9eDdWGvgTOY1x.jpg',
@@ -211,7 +219,8 @@ class DatabaseSeeder extends Seeder
 <p class="MsoNormal" style="text-align: justify;">Kami ingin mengucapkan selamat kepada Ananda Mahfudz atas prestasinya yang luar biasa dalam cabang Kids Athletic Putra pada ajang O2SN tingkat Provinsi Jawa Timur. Semoga prestasi ini hanya menjadi awal dari perjalanan yang panjang dalam dunia olahraga. Semangat terus untuk terus berkembang dan meraih prestasi yang lebih besar di masa depan. Terima kasih atas kebanggaan dan inspirasi yang telah Ananda Mahfudz berikan kepada kita semua di SDN Kauman Magetan.</p>',
         ]);
         Post::create([
-            'category_id' => 1,
+            'category_id' => 2,
+            'published_at' => now()->format('Y-m-d'),
             'title' => 'Ananda Mahfudz Meraih Juara 1 dalam O2SN Cabor Kids Athletic Putra Kabupaten Magetan',
             'slug' => 'ananda-mahfudz-meraih-juara-1-dalam-o2sn-cabor-kids-athletic-putra-kabupaten-magetan',
             'image' => 'post-images/WYELIKSK5HZSSo2ciKOUoLUkH3h6drRnwHpJeu8I.jpg',
@@ -230,6 +239,7 @@ class DatabaseSeeder extends Seeder
         ]);
         Post::create([
             'category_id' => 1,
+            'published_at' => now()->format('Y-m-d'),
             'title' => 'Pembentukan Karakter: Nilai-nilai Etika di SD Negeri Kauman Magetan',
             'slug' => 'pembentukan-karakter-nilai-nilai-etika-di-sd-negeri-kauman-magetan',
             'image' => 'post-images/lyZGsUkQJlmkuVwTKxguTsCylH1HehzZeYtO9fFm.webp',
@@ -240,7 +250,8 @@ class DatabaseSeeder extends Seeder
 <p>Siswa diajarkan untuk bertanggung jawab terhadap tugas-tugas sekolah, lingkungan, dan diri sendiri. Dengan mengajarkan nilai tanggung jawab, sekolah ini berharap siswa dapat menjadi individu yang dapat diandalkan, memiliki rasa memiliki terhadap tugas-tugasnya, dan mampu mengambil keputusan yang baik.Penerapan nilai-nilai etika di SD Negeri Kauman Magetan tidak hanya dilakukan melalui pembelajaran di kelas, tetapi juga melalui kegiatan ekstrakurikuler, seperti kegiatan sosial, kegiatan lingkungan, dan kegiatan keagamaan. Melalui kegiatan-kegiatan ini, siswa diajarkan untuk mengaplikasikan nilai-nilai etika dalam kehidupan sehari-hari.Dengan adanya penerapan nilai-nilai etika di SD Negeri Kauman Magetan, diharapkan siswa dapat tumbuh menjadi individu yang memiliki karakter yang baik, bertanggung jawab, dan memiliki integritas tinggi. Pembentukan karakter yang baik ini akan membantu siswa dalam menghadapi tantangan di masa depan dan menjadi individu yang berkontribusi positif bagi masyarakat.</p>',
         ]);
         Post::create([
-            'category_id' => 1,
+            'category_id' => 3,
+            'published_at' => now()->format('Y-m-d'),
             'title' => 'Sekilas Tentang SD Negeri Kauman Magetan : Sejarah, Visi, dan Misi',
             'slug' => 'sekilas-tentang-sd-negeri-kauman-magetan-sejarah-visi-dan-misi',
             'image' => 'post-images/gJr5FfpU6kMSRRvvKx6VRmppXVcviKt2TJVV98y4.webp',

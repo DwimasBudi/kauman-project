@@ -51,7 +51,7 @@
                             <tr>
                             <td><a href="{{ asset('post') }}/{{ $post->slug }}" style="text-decoration: none; color: black;">{{ $post->title  }}</a></td>
                             <td>{{ $post->category->name}}</td>
-                            <td style="width: 120px;">{{ $post->updated_at->format('d-m-Y') }}</td>
+                            <td style="width: 120px;">{{ \Carbon\Carbon::parse($post->published_at)->format('d-m-Y') }}</td>
                             </tr>
                             @endforeach
                         </tbody>

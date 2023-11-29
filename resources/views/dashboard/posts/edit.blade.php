@@ -27,6 +27,15 @@
     @enderror
   </div>
   <div class="mb-3">
+    <label for="datepicker" class="form-label">published :</label>
+    <input type="text" name="published_at" class="form-control @error('slug') is-invalid @enderror" id="datepicker"  value="{{ old('published_at', \Carbon\Carbon::parse($post->published_at)->format('Y-m-d') ) }}">
+    @error('published_at')
+        <div class="invalid-feedback">
+            {{$message}}
+        </div> 
+    @enderror
+  </div>
+  <div class="mb-3">
     <label for="category" class="form-label">Category</label>
     <select class="form-select @error('category') is-invalid @enderror" name="category_id" id="category" required>
         <option selected disabled>Pilih kategory</option>
@@ -79,4 +88,10 @@
   <button type="submit" class="btn btn-primary mt-3">Update Post</button>
 </form>
 </div>
+<script>
+        $('#datepicker').datepicker({
+            uiLibrary: 'bootstrap5',
+            format: 'yyyy-mm-dd',
+        });
+</script>
 @endsection
