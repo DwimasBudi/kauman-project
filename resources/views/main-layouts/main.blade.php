@@ -11,17 +11,17 @@
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://sklh.dwimasbudi.my.id/" />
+    <meta property="og:url" content="https://sdnkaumanmagetan.site/" />
     <meta property="og:title" content="SD Negeri Kauman Magetan" />
     <meta property="og:description" content="SD Negeri Kauman Magetan, Sekolah Ramah Anak" />
-    <meta property="og:image" content="https://sklh.dwimasbudi.my.id/img/logo.png" />
+    <meta property="og:image" content="https://sdnkaumanmagetan.site/img/logo.png" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://sklh.dwimasbudi.my.id/" />
+    <meta property="twitter:url" content="https://sdnkaumanmagetan.site/" />
     <meta property="twitter:title" content="SD Negeri Kauman Magetan" />
     <meta property="twitter:description" content="SD Negeri Kauman Magetan, Sekolah Ramah Anak" />
-    <meta property="twitter:image" content="https://sklh.dwimasbudi.my.id/img/logo.png" />
+    <meta property="twitter:image" content="https://sdnkaumanmagetan.site/img/logo.png" />
 
     {{-- <title>SD Negeri Kauman Magetan</title> --}}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
