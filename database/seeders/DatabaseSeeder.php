@@ -29,7 +29,7 @@ class DatabaseSeeder extends Seeder
             'nama' => 'Admin SDN Kauman',
             'username' => 'sdnkauman',
             // 'email' => 'wisnuaryo@gmail.com',
-            'password' => bcrypt('@Admin.com')
+            'password' => bcrypt('kaumanmagetan')
         ]);
         Category::create([
             'name' => 'Berita',
