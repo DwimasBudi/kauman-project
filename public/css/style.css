@@ -223,11 +223,11 @@ header {
     z-index: 5;
 }
 
-#carouselExampleCaptions:hover .control {
-    /* display: block; */
-    /* background-color: aqua; */
-    /* height: 100px; */
-}
+/* #carouselExampleCaptions:hover .control {
+    display: block;
+    background-color: aqua;
+    height: 100px;
+} */
 
 #carouselExampleCaptions:hover .carousel-caption {
     background-color: rgba(31, 32, 31, 0.3);

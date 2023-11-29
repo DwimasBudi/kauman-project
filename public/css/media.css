@@ -128,4 +128,9 @@
     .name-logo {
             font-size: 16px;
     }
+    .carousel-caption h5 {
+    width: 100%;
+    font-size: 25px;
+    font-weight: bold;
+    }
 }
