@@ -56,7 +56,7 @@
                 {{-- <h3>Artikel</h3> --}}
             </div>
             <div class="owl-carousel owl-theme">
-                @foreach ($posts as $post)
+                @foreach ($posts->take(6) as $post)
                 <div class="item">
                     <a class="cover-link" href="/post/{{ $post->slug }}"></a>
                         <div class="carousel-item-image">
