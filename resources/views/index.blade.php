@@ -20,7 +20,7 @@
                                 <div class="carousel-caption">
                                     <a class="badge" href="">{{ $headline[0]->category->name }}</a>
                                     <h5 style="font-size: 20px;">{{ $headline[0]->title }}</h5>
-                                    <span class="card-text mb-0 fw-bold fs-8">SDNKauman</span><span class="fs-8"> - {{ $headline[0]->updated_at->format('d F Y') }}</span>
+                                    <span class="card-text mb-0 fw-bold fs-8">SDNKauman</span><span class="fs-8"> - {{ \Carbon\Carbon::parse($headline[0]->published_at)->format('d F Y') }}</span>
                                     <!-- <p>Some representative placeholder content for the first slide.</p> -->
                                 </div>
                             </div>
@@ -31,7 +31,7 @@
                                 <div class="carousel-caption">
                                     <a class="badge" href="">{{ $head->category->name }}</a>
                                     <h5 style="font-size: 20px;">{{ $head->title }}</h5>
-                                    <span class="card-text mb-0 fw-bold fs-8">SDNKauman</span><span class="fs-8"> - {{ $head->updated_at->format('d F Y') }}</span>
+                                    <span class="card-text mb-0 fw-bold fs-8">SDNKauman</span><span class="fs-8"> - {{ \Carbon\Carbon::parse($head->published_at)->format('d F Y') }}</span>
                                     <!-- <p>Some representative placeholder content for the first slide.</p> -->
                                 </div>
                             </div>
@@ -64,7 +64,7 @@
                         </div>
                         <div class="carousel-item-text">
                             <h6 class="card-title">{{ $post->title }}</h6>
-                            <span class="card-text mb-0 fw-bold fs-8">SDNKauman</span><span class="fs-8"> - {{ $post->updated_at->format('d F Y') }}</span>
+                            <span class="card-text mb-0 fw-bold fs-8">SDNKauman</span><span class="fs-8"> - {{ \Carbon\Carbon::parse($post->published_at)->format('d F Y') }}</span>
                         </div>
                 </div>
                 @endforeach

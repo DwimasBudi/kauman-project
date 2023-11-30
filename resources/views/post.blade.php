@@ -8,7 +8,7 @@
                     <div class="post-info my-1 py-1">
                         <span class="entry-date">
                             <i class="far fa-clock"></i>
-                            {{ $post->updated_at->format('d F Y') }}
+                            {{ \Carbon\Carbon::parse($post->published_at)->format('d F Y') }}
                         </span>
                     </div>
                     <h1>{{ $post->title }}</h1>
