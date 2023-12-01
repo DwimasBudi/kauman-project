@@ -174,7 +174,7 @@
 
 
                               @if (Auth::check())
-                              <input name="email" type="email" class="form-control mx-3" placeholder="email" aria-label="email" required @if (Cookie::has('CommentLimit')) @endif value="admin@kauman.sch.id" readonly>
+                              <input name="email" type="email" class="form-control mx-3" placeholder="email" aria-label="email" required @if (Cookie::has('CommentLimit')) @endif value="admin@kauman.sch.id" hidden>
                               @endif
                               @if (!Auth::check())
                               <input name="email" type="email" class="form-control mx-3 @error('email') is-invalid @enderror" placeholder="@error('email') {{$message}} @else Email @enderror" aria-label="email" required @if (Cookie::has('CommentLimit')) disabled @endif>
@@ -222,7 +222,7 @@ $(document).ready(function() {
                               <input name="post_id" type="hidden" value="{{ $post->id }}">
                               <input name="username" type="text" class="form-control" placeholder="Username" aria-label="Username" required @if (Cookie::has('CommentLimit')) disabled @endif @if (Auth::check()) value="SDNKauman" readonly @endif>
                                 @if (Auth::check())
-                                <input name="email" type="email" class="form-control mx-3" placeholder="email" aria-label="email" required @if (Cookie::has('CommentLimit')) disabled @endif value="admin@kauman.sch.id">
+                                <input name="email" type="email" class="form-control mx-3" placeholder="email" aria-label="email" required @if (Cookie::has('CommentLimit')) disabled @endif value="admin@kauman.sch.id" hidden>
                                 @endif
                                 @if (!Auth::check())
                                 <input name="email" type="email" class="form-control mx-3" placeholder="email" aria-label="email" required @if (Cookie::has('CommentLimit')) disabled @endif>
