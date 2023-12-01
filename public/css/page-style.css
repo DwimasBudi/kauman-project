@@ -70,6 +70,10 @@ aside {
   object-fit: cover;
 }
 
+article img{
+  max-width: 90%;
+  object-fit: cover;
+}
 
 
 @media (max-width: 768px) {
