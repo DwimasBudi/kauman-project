@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
     <!-- Primary Meta Tags -->
     <title>{{ $title }}</title>
     <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
@@ -22,7 +23,7 @@
     <meta property="twitter:title" content="SD Negeri Kauman Magetan" />
     <meta property="twitter:description" content="SD Negeri Kauman Magetan, Sekolah Ramah Anak" />
     <meta property="twitter:image" content="https://sdnkaumanmagetan.site/img/logo.png" />
-
+    <meta name="google-site-verification" content="QkQPMUSGPTho1Qk0VLCVZSuQrpNgZ7FQVboSycE6wuc" />
     {{-- <title>SD Negeri Kauman Magetan</title> --}}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
