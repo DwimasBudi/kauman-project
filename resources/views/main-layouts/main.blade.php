@@ -6,7 +6,7 @@
     
     <!-- Primary Meta Tags -->
     <title>{{ $title }}</title>
-    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="{{ asset('img/favicon.ico') }}">
     <meta name="title" content="SDN Kauman Magetan" />
     <meta name="description" content="SD Negeri Kauman Magetan, Sekolah Ramah Anak" />
 
