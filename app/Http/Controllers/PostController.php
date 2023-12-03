@@ -22,6 +22,7 @@ class PostController extends Controller
             'kontak' => Kontak::get()->first(),
             'categories' => Category::orderBy('name')->get(),
             'title' => 'SD Negeri Kauman Magetan',
+            'handphone'=> Kontak::get()->first()->hp,
         ]);
     }
     public function blog()
@@ -32,13 +33,14 @@ class PostController extends Controller
             $title = ' | '.$category->name;
         }
         return view('blog', [
-            'posts' => Post::latest()->filter(request(['search', 'category', 'author']))->paginate(10)->withQueryString(),
+            'posts' => Post::latest()->filter(request(['search', 'category']))->paginate(10)->withQueryString(),
             'title' => 'SD Negeri Kauman Magetan' . $title,
             // 'posts' => Post::orderBy('created_at', 'desc')->paginate(10),
             'postx' => Post::orderBy('created_at', 'desc')->get(),
             'visi' => VisiMisi::get()->first(),
             'sambutan' => Sambutan::get()->first(),
             'kontak' => Kontak::get()->first(),
+            'handphone' => Kontak::get()->first()->hp,
             'categories'=> Category::latest()->get()
         ]);
     }
@@ -51,6 +53,7 @@ class PostController extends Controller
             'post' => $post,
             'categories'=> Category::latest()->get(),
             'comments' => Comment::where('post_id', $post->id)->where('reply_id', null)->paginate(10),
+            'handphone' => Kontak::get()->first()->hp,
 
         ]);
     }

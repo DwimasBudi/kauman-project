@@ -5,7 +5,7 @@
                 <a class="nav-link text-dark mx-1" href="/admin">Admin</a>
                 <a class="nav-link text-dark mx-1" href="https://www.youtube.com/@sdnegerikaumankec.karangre7291">Youtube</a>
                 <a class="nav-link text-dark mx-1" href="https://www.instagram.com/sdnkauman">Instagram</a>
-                <a class="nav-link text-dark mx-1" href="https://wa.me/+6289696574935">Whatsapp</a>
+                <a class="nav-link text-dark mx-1" href="https://wa.me/{{ $handphone }}">Whatsapp</a>
             </div>
         </div>
     </header>

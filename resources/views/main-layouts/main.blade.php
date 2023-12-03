@@ -7,24 +7,22 @@
     <!-- Primary Meta Tags -->
     <title>{{ $title }}</title>
     <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
-    <meta name="title" content="SD Negeri Kauman Magetan" />
+    <meta name="title" content="SDN Kauman Magetan" />
     <meta name="description" content="SD Negeri Kauman Magetan, Sekolah Ramah Anak" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://sdnkaumanmagetan.site/" />
+    <meta property="og:url" content="{{ asset('/') }}" />
     <meta property="og:title" content="SD Negeri Kauman Magetan" />
     <meta property="og:description" content="SD Negeri Kauman Magetan, Sekolah Ramah Anak" />
-    <meta property="og:image" content="https://sdnkaumanmagetan.site/img/logo.png" />
+    <meta property="og:image" content="{{ asset('img/logo.png') }}" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://sdnkaumanmagetan.site/" />
+    <meta property="twitter:url" content="{{ asset('/') }}" />
     <meta property="twitter:title" content="SD Negeri Kauman Magetan" />
     <meta property="twitter:description" content="SD Negeri Kauman Magetan, Sekolah Ramah Anak" />
-    <meta property="twitter:image" content="https://sdnkaumanmagetan.site/img/logo.png" />
-    <meta name="google-site-verification" content="QkQPMUSGPTho1Qk0VLCVZSuQrpNgZ7FQVboSycE6wuc" />
-    {{-- <title>SD Negeri Kauman Magetan</title> --}}
+    <meta property="twitter:image" content="{{ asset('img/logo.png') }}" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
@@ -34,10 +32,10 @@
     <link rel="stylesheet" href="{{ asset('css/media.css') }}">
 
 {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> --}}
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css" rel="stylesheet" />
-<link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" rel="stylesheet" />
 </head>
 <body>
 <div class="container-main">

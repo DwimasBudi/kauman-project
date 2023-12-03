@@ -25,7 +25,6 @@ class KontakController extends Controller
             'email' => 'required',
             'alamat' => 'required',
             'hp' => 'required',
-            // 'fax' => 'required',
         ];
         $validatedData = $request->validate($rules);
         if ($request->file('image')) {

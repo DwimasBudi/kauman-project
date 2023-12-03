@@ -34,7 +34,7 @@
   </div>
     <div class="mb-3">
     <label for="hp" class="form-label">telephone : </label>
-    <input type="text" name="hp" class="form-control @error('hp') is-invalid @enderror" id="hp" placeholder="telephone" autofocus value="{{ old('hp',$kontak->hp) }}">
+    <input type="text" name="hp" class="form-control @error('hp') is-invalid @enderror" id="hp" placeholder="+628123456789" autofocus value="{{ old('hp',$kontak->hp) }}">
     @error('hp')
         <div class="invalid-feedback">
             {{$message}}
