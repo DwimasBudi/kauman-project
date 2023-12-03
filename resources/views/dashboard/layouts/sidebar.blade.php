@@ -26,7 +26,7 @@
                     <i class="uil uil-tag-alt"></i>
                     <span class="link-name">Category</span>
                 </a></li>
-                <li><a {{ Request::is("dashboard/visimisi*") ? "class=active" : "" }} href="/dashboard/visi-misi/edit">
+                <li><a {{ Request::is("dashboard/visi-misi*") ? "class=active" : "" }} href="/dashboard/visi-misi/edit">
                     <i class="uil uil-bullseye"></i>
                     <span class="link-name">Visi-Misi</span>
                 </a></li>
