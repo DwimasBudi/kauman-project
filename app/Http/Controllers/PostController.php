@@ -21,7 +21,7 @@ class PostController extends Controller
             'sambutan' => Sambutan::get()->first(),
             'kontak' => Kontak::get()->first(),
             'categories' => Category::orderBy('name')->get(),
-            'title' => 'SD Negeri Kauman Magetan',
+            'title' => 'SDN Kauman Magetan',
             'handphone'=> Kontak::get()->first()->hp,
         ]);
     }
